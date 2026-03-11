@@ -1,1 +1,1 @@
-# neurosymbolic-ai-for-HIPAA-compliance
+# neurosymbolic-ai-checker-for-HIPAA-compliance
