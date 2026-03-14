@@ -76,8 +76,8 @@ hipaa-compliance-checker/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/rezaJOY/hipaa-compliance-checker
-cd hipaa-compliance-checker
+git clone https://github.com/raisa-SSTL/neurosymbolic-ai-checker-for-HIPAA-compliance.git
+cd neurosymbolic-ai-checker-for-HIPAA-compliance
 ```
 
 ### 2. Create a Virtual Environment
