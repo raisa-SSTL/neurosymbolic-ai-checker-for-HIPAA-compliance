@@ -1,0 +1,82 @@
+System	Component_ID	Component_Name	Component_Type	Sends_Data_To	Handles_PHI	Is_External	Has_BAC_Contract	Has_Encryption	Has_AuditLog	Notes	Violation_Expected	Extraction_Status
+Telemedicine Platform	TP-01	Patient Mobile App	Service	TP-02	Yes	No	N/A	Yes	Yes	Collects patient symptoms and personal information (contains PHI)	No	Completed
+Telemedicine Platform	TP-02	API Gateway	API	TP-03,TP-04,TP-10	Yes	No	N/A	Yes	Yes	Routes patient requests and consultation data (contains PHI)	No	Completed
+Telemedicine Platform	TP-03	Auth Service	Service	TP-05	No	No	N/A	N/A	N/A	Handles authentication tokens only (no PHI stored)	No	Completed
+Telemedicine Platform	TP-04	Consultation Service	Service	TP-05,TP-06,TP-08	Yes	No	N/A	Yes	Yes	Processes consultation notes and patient interaction data (contains PHI)	No	Completed
+Telemedicine Platform	TP-05	Patient Records DB	Database	TP-04,TP-07	Yes	No	N/A	Yes	No	Stores patient medical history and prescriptions (contains PHI)	No	Completed
+Telemedicine Platform	TP-06	Video Streaming Server	Service	TP-09	Yes	No	N/A	No	Yes	Streams live consultation video containing PHI to external provider	Yes	Completed
+Telemedicine Platform	TP-07	Internal Analytics	Service	TP-11	Yes	No	N/A	Yes	Yes	Processes identifiable consultation analytics and sends PHI to external analytics system	Yes	Completed
+Telemedicine Platform	TP-08	Prescription Service	Service	TP-05	Yes	No	N/A	Yes	Yes	Generates and stores prescriptions (contains PHI)	No	Completed
+Telemedicine Platform	TP-09	External Video CDN	External		Yes	Yes	No	No	No	Third-party video infrastructure receiving PHI streams	Yes	Completed
+Telemedicine Platform	TP-10	Notification Service	Service	TP-12	Yes	No	N/A	No	Yes	Sends appointment notifications containing PHI to external messaging service	Yes	Completed
+Telemedicine Platform	TP-11	External Analytics SaaS	External		Yes	Yes	No	No	No	External analytics platform receiving PHI data	Yes	Completed
+Telemedicine Platform	TP-12	External SMS Gateway	External		Yes	Yes	No	No	No	External messaging provider receiving PHI in notifications	Yes	Completed
+Appointment Booking System	AB-01	Web Booking Portal	Service	AB-02	Yes	No	N/A	Yes	Yes	Collects patient identity and appointment data (contains PHI)	No	Completed
+Appointment Booking System	AB-02	Booking API	API	AB-03,AB-04,AB-10	Yes	No	N/A	Yes	Yes	Processes booking requests and patient data (contains PHI)	No	Completed
+Appointment Booking System	AB-03	Scheduling Engine	Service	AB-05	Yes	No	N/A	Yes	Yes	Matches doctors with patient appointments (contains PHI)	No	Completed
+Appointment Booking System	AB-04	Auth Service	Service	AB-06	No	No	N/A	N/A	N/A	Handles login and session management (no PHI stored)	No	Completed
+Appointment Booking System	AB-05	Appointment DB	Database	AB-07	Yes	No	N/A	Yes	No	Stores appointment records and patient identifiers (contains PHI)	No	Completed
+Appointment Booking System	AB-06	User DB	Database		Yes	No	N/A	Yes	Yes	Stores patient identity profiles (contains PHI)	No	Completed
+Appointment Booking System	AB-07	Reminder Service	Service	AB-11	Yes	No	N/A	No	No	Sends appointment reminders containing PHI to external email provider	Yes	Completed
+Appointment Booking System	AB-08	Admin Dashboard API	API	AB-05	Yes	No	N/A	Yes	Yes	Allows staff to manage bookings and patient data (contains PHI)	No	Completed
+Appointment Booking System	AB-09	Audit Log Storage	Storage		No	No	N/A	N/A	N/A	Stores system logs without PHI	No	Completed
+Appointment Booking System	AB-10	Analytics Processor	Service	AB-12	Yes	No	N/A	No	No	Processes identifiable booking analytics and sends PHI to external BI system	Yes	Completed
+Appointment Booking System	AB-11	External Email Service	External		Yes	Yes	No	No	No	External email provider receiving PHI in reminders	Yes	Completed
+Appointment Booking System	AB-12	External BI Tool	External		Yes	Yes	Yes	Yes	Yes	External analytics tool receiving identifiable PHI data	No	Completed
+Lab Results Portal	LR-01	Patient Portal Web	Service	LR-02	Yes	No	N/A	Yes	Yes	Allows patients to view lab reports and identity data (contains PHI)	No	Completed
+Lab Results Portal	LR-02	API Gateway	API	LR-03,LR-04,LR-08	Yes	No	N/A	Yes	Yes	Routes lab result and patient requests (contains PHI)	No	Completed
+Lab Results Portal	LR-03	Lab Results Service	Service	LR-05,LR-09	Yes	No	N/A	No	Yes	Processes diagnostic results and sends identifiable PHI to external analytics	Yes	Completed
+Lab Results Portal	LR-04	Auth Service	Service	LR-06	No	No	N/A	N/A	N/A	Handles authentication tokens only (no PHI stored)	No	Completed
+Lab Results Portal	LR-05	Lab Results DB	Database	LR-03,LR-07	Yes	No	N/A	Yes	No	Stores diagnostic reports and patient identifiers (contains PHI)	No	Completed
+Lab Results Portal	LR-06	Identity Storage	Database		Yes	No	N/A	Yes	Yes	Stores patient identity information (contains PHI)	No	Completed
+Lab Results Portal	LR-07	Report Generator	Service	LR-08,LR-10	Yes	No	N/A	No	Yes	Generates lab reports and sends PHI copies to external cloud storage	Yes	Completed
+Lab Results Portal	LR-08	Internal File Storage	Storage	LR-01	Yes	No	N/A	Yes	Yes	Stores generated lab reports internally (contains PHI)	No	Completed
+Lab Results Portal	LR-09	Notification Service	Service	LR-11	Yes	No	N/A	No	Yes	Sends lab result alerts containing PHI to external SMS provider	Yes	Completed
+Lab Results Portal	LR-10	External Cloud Storage	External		Yes	Yes	No	No	No	External storage provider receiving PHI report backups	Yes	Completed
+Lab Results Portal	LR-11	External SMS Provider	External		Yes	Yes	Yes	Yes	Yes	External messaging provider receiving PHI notifications	No	Completed
+Medplum	MED-01	Clinical Data Repository (CDR)	Service	MED-03, MED-06	Yes	No	N/A	Yes	Yes	Backend server that hosts healthcare data in a secure, standards-based repository	No	Completed
+Medplum	MED-02	Medplum FHIR API	API	MED-01, MED-05	Yes	No	N/A	Yes	Yes	Interface for manipulating FHIR data records	No	Completed
+Medplum	MED-03	PostgreSQL Database	Database		Yes	No	N/A	Yes	Yes	Primary persistent storage for all system records	No	Completed
+Medplum	MED-04	Medplum Auth Server	Service	MED-02	Yes	No	N/A	Yes	Yes	Manages identity and SMART-on-FHIR permissions	No	Completed
+Medplum	MED-05	Medplum Bots	Service	MED-02	Yes	No	N/A	Yes	Yes	Runs server-side logic for processing patient data	No	Completed
+Medplum	MED-06	Redis Cache	Storage		Yes	No	N/A	Yes	Yes	Storage for background jobs and cached patient data	No	Completed
+Medplum	MED-07	On-Premise Agent	Service	MED-02	Yes	No	N/A	Yes	Yes	Internal package for medical device connectivity	No	Completed
+Medplum	MED-08	Medplum App	Service	MED-02	Yes	No	N/A	Yes	Yes	Core web application for managing patient workflows	No	Completed
+Medplum	MED-09	HL7 Integration Service	Service	MED-02	Yes	No	N/A	Yes	Yes	Handles standard clinical messaging protocols	No	Completed
+Medplum	MED-10	FHIR Router	Service	MED-01	Yes	No	N/A	Yes	Yes	Directs FHIR URL requests within the repository	No	Completed
+Medplum	MED-11	AWS Lambda Bot Layer	Service	MED-05	Yes	Yes	Yes	Yes	Yes	External infrastructure layer providing the third-party cloud execution environment for Bots	No	Completed
+Medplum	MED-12	GraphiQL Interface	Service	MED-02	Yes	No	N/A	Yes	Yes	Integrated tool for querying patient records	No	Completed
+Medplum	MED-13	Backend API Server	Service	MED-03, MED-06	Yes	No	N/A	Yes	Yes	Node.js Express server powering the core logic	No	Completed
+Microsoft FHIR	MSFT-01	Client Application	External	MSFT-02, MSFT-03	Yes	Yes	No	No	No	External consumer or app requesting access.	Yes	Completed
+Microsoft FHIR	MSFT-02	Azure Active Directory	Service	MSFT-03, MSFT-04	No	Yes	Yes	N/A	N/A	Handles Auth settings and RBAC.	No	Completed
+Microsoft FHIR	MSFT-03	FHIR Proxy	Service	MSFT-04	Yes	No	N/A	Yes	Yes	Secure Gateway/Proxy for FHIR servers.	No	Completed
+Microsoft FHIR	MSFT-04	RESTful API Layer	API	MSFT-06	Yes	No	N/A	Yes	Yes	Implementation of APIs defined by HL7 FHIR.	No	Completed
+Microsoft FHIR	MSFT-05	SMART on FHIR Proxy	Service	MSFT-04	Yes	No	N/A	Yes	Yes	Enables SMART on FHIR applications.	No	Completed
+Microsoft FHIR	MSFT-06	Core Logic Layer	Service	MSFT-07, MSFT-09	Yes	No	N/A	Yes	Yes	Implementation of the core FHIR logic.	No	Completed
+Microsoft FHIR	MSFT-07	Bulk Export Module	Service	MSFT-13	Yes	No	N/A	Yes	Yes	Handles high-volume PHI export tasks.	No	Completed
+Microsoft FHIR	MSFT-08	Convert Data Service	Service	MSFT-06	Yes	No	N/A	Yes	Yes	Normalizes and converts data into FHIR.	No	Completed
+Microsoft FHIR	MSFT-09	Persistence Layer	Service	MSFT-10, MSFT-11	Yes	No	N/A	Yes	Yes	Pluggable provider for data persistence.	No	Completed
+Microsoft FHIR	MSFT-10	Azure Cosmos DB	Database	MSFT-09	Yes	Yes	Yes	Yes	Yes	Primary storage for FHIR datasets.	No	Completed
+Microsoft FHIR	MSFT-11	SQL Server	Database	MSFT-09	Yes	Yes	Yes	Yes	Yes	Alternative structured database for PHI.	No	Completed
+Microsoft FHIR	MSFT-12	DICOM Server	External	MSFT-14	Yes	Yes	Yes	Yes	Yes	Integrated healthcare imaging service.	No	Completed
+Microsoft FHIR	MSFT-13	Azure Blob Storage	Storage	MSFT-01	Yes	Yes	Yes	Yes	Yes	Destination for exported clinical data.	No	Completed
+Microsoft FHIR	MSFT-14	Healthcare Workspace	Service	MSFT-04, MSFT-12	Yes	No	N/A	Yes	Yes	Unified PaaS offering for FHIR/DICOM.	No	Completed
+Microsoft FHIR	MSFT-15	Hosting Layer (IoC)	Service	MSFT-04, MSFT-06	No	No	N/A	N/A	N/A	Manages environment and custom configurations.	No	Completed
+HAPI	HF-01	REST API Layer	API	HF-02	Yes	No	N/A	Yes	Yes	TLS 1.2+; Exposes FHIR endpoints.	No	Completed
+HAPI	HF-02	Resource Controllers	Service	HF-04	Yes	No	N/A	Yes	Yes	Handles Patient/Observation logic.	No	Completed
+HAPI	HF-03	Server Framework	Framework	HF-04	Yes	No	N/A	Yes	Yes	Core HAPI wiring; Internal.	No	Completed
+HAPI	HF-04	JPA Persistence Layer	Persistence	HF-05	Yes	No	N/A	Yes	Yes	Internal ORM; maps to DB.	No	Completed
+HAPI	HF-05	Relational Database	Database	HF-04	Yes	Yes	Yes	Yes	Yes	AES-256 Encrypted. Managed Cloud DB.	No	Completed
+HAPI	HF-06	Search Engine	Service	HF-05	Yes	No	N/A	Yes	Yes	Indexing and query execution.	No	Completed
+HAPI	HF-07	FHIR Validation	Service	HF-02	Yes	No	N/A	Yes	Yes	Validates against Profiles.	No	Completed
+HAPI	HF-08	Terminology Service	Service	HF-07	No	No	N/A	N/A	N/A	ValueSet/CodeSystem lookups.	No	Completed
+HAPI	HF-09	AuthN (Identity)	Security	HF-01	No	Yes	Yes	N/A	N/A	External IdP (Azure AD/Okta).	No	Completed
+HAPI	HF-10	AuthZ (Access)	Security	HF-02	No	No	N/A	N/A	N/A	HAPI AuthorizationInterceptor.	No	Completed
+HAPI	HF-11	Binary Storage	Storage	HF-04	Yes	Yes	Yes	Yes	Yes	Managed Blob (DICOM/Attachments).	No	Completed
+HAPI	HF-12	External Integrations	Integration	HF-01	Yes	Yes	Yes	Yes	Yes	Violation if BAC is missing.	No	Completed
+HAPI	HF-13	Logging/Metrics	Observability	Admin	No	No	N/A	N/A	N/A	Ops metrics only; No PHI.	No	Completed
+HAPI	HF-14	Audit Logging	Compliance	HF-05	Yes	No	N/A	Yes	Yes	Generates FHIR AuditEvents.	No	Completed
+HAPI	HF-15	Caching Layer	Performance	HF-04	Yes	Yes	Yes	Yes	Yes	Managed Redis; must be encrypted.	No	Completed
+HAPI	HF-16	Batch Scheduler	Background	HF-04	Yes	No	N/A	Yes	Yes	Bulk Export/Import processing.	No	Completed
+HAPI	HF-17	Config Management	Ops	All	No	No	N/A	N/A	N/A	Env variables; No PHI.	No	Completed
+HAPI	HF-18	Swagger UI	Dev UX	HF-01	No	No	N/A	N/A	N/A	API Documentation only.	No	Completed						
