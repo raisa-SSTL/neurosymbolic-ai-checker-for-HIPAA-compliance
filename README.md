@@ -48,7 +48,7 @@ Compliance Report     — Per-component ✅ / ❌ output with explanations
 ## Project Structure
 
 ```
-hipaa-compliance-checker/
+neurosymbolic-ai-checker-for-HIPAA-compliance/
 ├── data/
 │   └── Architecture_Compliance_Dataset.tsv   ← Synthetic dataset
 ├── src/
