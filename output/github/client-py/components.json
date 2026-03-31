@@ -1,0 +1,66 @@
+[
+  {
+    "component_name": "FHIRClient",
+    "system_name": "FHIR Tools \u2014 client-py",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "FHIRServer"
+    ],
+    "notes": "A flexible Python client for FHIR servers supporting the SMART on FHIR protocol.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "FHIRServer",
+    "system_name": "FHIR Tools \u2014 client-py",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "The actual handle to the FHIR server being accessed.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "SMART on FHIR server",
+    "system_name": "FHIR Tools \u2014 client-py",
+    "component_id": "",
+    "component_type": "External",
+    "handles_phi": "Yes",
+    "is_external": "Yes",
+    "has_bac_contract": "No",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "A protected server that requires authorization to access patient data.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Patient Database",
+    "system_name": "FHIR Tools \u2014 client-py",
+    "component_id": "",
+    "component_type": "Database",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "No",
+    "sends_data_to": [
+      "FHIRClient"
+    ],
+    "notes": "A database that stores patient data.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  }
+]

@@ -1,0 +1,34 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-03-31 22:57
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    FHIRClient
+Compliant    FHIRServer
+VIOLATION    SMART on FHIR server
+VIOLATION    Patient Database
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : SMART on FHIR server
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : SMART on FHIR server
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : Patient Database
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : The risk is inability to track and detect unauthorized access to PHI, the specific HIPAA safeguard being violated is the Audit Control standard, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+============================================================
+SUMMARY: 3 violation(s) in 2 component(s) out of 4 total
+============================================================

@@ -1,0 +1,60 @@
+======================================================================
+BATCH COMPLIANCE SUMMARY — GITHUB REPO MODE
+Generated : 2026-03-31 22:58
+======================================================================
+
+#    System               Repo                                    Comp  Viol Status
+----------------------------------------------------------------------
+1    Medplum              medplum                                    8     0  ✓
+2    Medplum              medplum-demo-bots                          6     0  ✓
+3    OpenEMR              openemr                                    6     0  ✓
+4    OpenEMR              openemr-devops                             3     1  ✓
+5    Microsoft FHIR       fhir-server                                4     0  ✓
+6    Microsoft FHIR       fhir-server-samples                        6     2  ✓
+7    Microsoft FHIR       healthcare-apis-samples                    5     0  ✓
+8    Microsoft FHIR       FHIR-Converter                             3     0  ✓
+9    Microsoft FHIR       fhir-codegen                               7     1  ✓
+10   Microsoft FHIR       healthcare-shared-components               5     1  ✓
+11   HAPI FHIR            hapi-fhir                                  5     0  ✓
+12   HAPI FHIR            hapi-fhir-jpaserver-starter                5     0  ✓
+13   FHIR Tools           client-js                                  5     3  ✓
+14   FHIR Tools           client-py                                  4     2  ✓
+15   FHIR Tools           fhir.resources                             7     0  ✓
+16   FHIR Tools           fhir                                       3     1  ✓
+18   OpenEMR              openemr-on-ecs                             1     0  ✓
+----------------------------------------------------------------------
+TOTAL                      17/17 repos                               83    11
+======================================================================
+
+======================================================================
+VIOLATIONS BY REPO
+======================================================================
+
+  #4 openemr-devops (OpenEMR):
+    • Database
+
+  #6 fhir-server-samples (Microsoft FHIR):
+    • Databricks
+    • Synthea
+
+  #9 fhir-codegen (Microsoft FHIR):
+    • FHIR Servers
+
+  #10 healthcare-shared-components (Microsoft FHIR):
+    • Microsoft Health Care team
+
+  #13 client-js (FHIR Tools):
+    • Browser
+    • FHIR Server
+    • NodeJS
+
+  #14 client-py (FHIR Tools):
+    • Patient Database
+    • SMART on FHIR server
+
+  #16 fhir (FHIR Tools):
+    • Synthea
+
+======================================================================
+SUMMARY: 11 violation(s) across 83 components in 17 repos
+======================================================================

@@ -1,0 +1,72 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#FHIRTools—fhir.resources_AppVeyor> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—fhir.resources> ;
+    hipaa:component_Name "AppVeyor" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—fhir.resources_Codecov> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—fhir.resources> ;
+    hipaa:component_Name "Codecov" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—fhir.resources_HL7> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—fhir.resources> ;
+    hipaa:component_Name "HL7" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—fhir.resources_PePy> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—fhir.resources> ;
+    hipaa:component_Name "PePy" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—fhir.resources_TravisCI> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—fhir.resources> ;
+    hipaa:component_Name "Travis CI" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—fhir.resources_fhir.resources> a hipaa:API ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—fhir.resources> ;
+    hipaa:component_Name "fhir.resources" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—fhir.resources_pydantic> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—fhir.resources> ;
+    hipaa:component_Name "pydantic" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+

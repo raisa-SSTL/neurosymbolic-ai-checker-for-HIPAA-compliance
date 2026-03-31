@@ -1,0 +1,232 @@
+{
+  "generated": "2026-03-31 22:58",
+  "total_repos": 17,
+  "completed": 17,
+  "failed": 0,
+  "total_components": 83,
+  "total_violations": 11,
+  "results": [
+    {
+      "id": 1,
+      "system": "Medplum",
+      "repo": "medplum",
+      "url": "https://github.com/medplum/medplum",
+      "status": "complete",
+      "components": 8,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/medplum/report_20260331_225318_779.txt"
+    },
+    {
+      "id": 2,
+      "system": "Medplum",
+      "repo": "medplum-demo-bots",
+      "url": "https://github.com/medplum/medplum-demo-bots",
+      "status": "complete",
+      "components": 6,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/medplum-demo-bots/report_20260331_225337_638.txt"
+    },
+    {
+      "id": 3,
+      "system": "OpenEMR",
+      "repo": "openemr",
+      "url": "https://github.com/openemr/openemr",
+      "status": "complete",
+      "components": 6,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/openemr/report_20260331_225356_162.txt"
+    },
+    {
+      "id": 4,
+      "system": "OpenEMR",
+      "repo": "openemr-devops",
+      "url": "https://github.com/openemr/openemr-devops",
+      "status": "complete",
+      "components": 3,
+      "violations": 1,
+      "flagged": [
+        "Database"
+      ],
+      "error": "",
+      "report_path": "output/github/openemr-devops/report_20260331_225415_16.txt"
+    },
+    {
+      "id": 5,
+      "system": "Microsoft FHIR",
+      "repo": "fhir-server",
+      "url": "https://github.com/microsoft/fhir-server",
+      "status": "complete",
+      "components": 4,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/fhir-server/report_20260331_225433_108.txt"
+    },
+    {
+      "id": 6,
+      "system": "Microsoft FHIR",
+      "repo": "fhir-server-samples",
+      "url": "https://github.com/microsoft/fhir-server-samples",
+      "status": "complete",
+      "components": 6,
+      "violations": 2,
+      "flagged": [
+        "Databricks",
+        "Synthea"
+      ],
+      "error": "",
+      "report_path": "output/github/fhir-server-samples/report_20260331_225452_470.txt"
+    },
+    {
+      "id": 7,
+      "system": "Microsoft FHIR",
+      "repo": "healthcare-apis-samples",
+      "url": "https://github.com/microsoft/healthcare-apis-samples",
+      "status": "complete",
+      "components": 5,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/healthcare-apis-samples/report_20260331_225510_767.txt"
+    },
+    {
+      "id": 8,
+      "system": "Microsoft FHIR",
+      "repo": "FHIR-Converter",
+      "url": "https://github.com/microsoft/FHIR-Converter",
+      "status": "complete",
+      "components": 3,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/fhir-converter/report_20260331_225528_711.txt"
+    },
+    {
+      "id": 9,
+      "system": "Microsoft FHIR",
+      "repo": "fhir-codegen",
+      "url": "https://github.com/microsoft/fhir-codegen",
+      "status": "complete",
+      "components": 7,
+      "violations": 1,
+      "flagged": [
+        "FHIR Servers"
+      ],
+      "error": "",
+      "report_path": "output/github/fhir-codegen/report_20260331_225548_348.txt"
+    },
+    {
+      "id": 10,
+      "system": "Microsoft FHIR",
+      "repo": "healthcare-shared-components",
+      "url": "https://github.com/microsoft/healthcare-shared-components",
+      "status": "complete",
+      "components": 5,
+      "violations": 1,
+      "flagged": [
+        "Microsoft Health Care team"
+      ],
+      "error": "",
+      "report_path": "output/github/healthcare-shared-components/report_20260331_225608_512.txt"
+    },
+    {
+      "id": 11,
+      "system": "HAPI FHIR",
+      "repo": "hapi-fhir",
+      "url": "https://github.com/hapifhir/hapi-fhir",
+      "status": "complete",
+      "components": 5,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/hapi-fhir/report_20260331_225627_928.txt"
+    },
+    {
+      "id": 12,
+      "system": "HAPI FHIR",
+      "repo": "hapi-fhir-jpaserver-starter",
+      "url": "https://github.com/hapifhir/hapi-fhir-jpaserver-starter",
+      "status": "complete",
+      "components": 5,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/hapi-fhir-jpaserver-starter/report_20260331_225646_972.txt"
+    },
+    {
+      "id": 13,
+      "system": "FHIR Tools",
+      "repo": "client-js",
+      "url": "https://github.com/smart-on-fhir/client-js",
+      "status": "complete",
+      "components": 5,
+      "violations": 3,
+      "flagged": [
+        "Browser",
+        "FHIR Server",
+        "NodeJS"
+      ],
+      "error": "",
+      "report_path": "output/github/client-js/report_20260331_225707_11.txt"
+    },
+    {
+      "id": 14,
+      "system": "FHIR Tools",
+      "repo": "client-py",
+      "url": "https://github.com/smart-on-fhir/client-py",
+      "status": "complete",
+      "components": 4,
+      "violations": 2,
+      "flagged": [
+        "Patient Database",
+        "SMART on FHIR server"
+      ],
+      "error": "",
+      "report_path": "output/github/client-py/report_20260331_225726_361.txt"
+    },
+    {
+      "id": 15,
+      "system": "FHIR Tools",
+      "repo": "fhir.resources",
+      "url": "https://github.com/nazrulworld/fhir.resources",
+      "status": "complete",
+      "components": 7,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/fhir.resources/report_20260331_225747_668.txt"
+    },
+    {
+      "id": 16,
+      "system": "FHIR Tools",
+      "repo": "fhir",
+      "url": "https://github.com/google/fhir",
+      "status": "complete",
+      "components": 3,
+      "violations": 1,
+      "flagged": [
+        "Synthea"
+      ],
+      "error": "",
+      "report_path": "output/github/fhir/report_20260331_225807_722.txt"
+    },
+    {
+      "id": 18,
+      "system": "OpenEMR",
+      "repo": "openemr-on-ecs",
+      "url": "https://github.com/openemr/openemr-on-ecs",
+      "status": "complete",
+      "components": 1,
+      "violations": 0,
+      "flagged": [],
+      "error": "",
+      "report_path": "output/github/openemr-on-ecs/report_20260331_225826_543.txt"
+    }
+  ]
+}

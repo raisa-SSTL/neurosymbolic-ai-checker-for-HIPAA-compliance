@@ -1,0 +1,19 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-03-31 22:53
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    Medplum Auth
+Compliant    Medplum Clinical Data Repository (CDR)
+Compliant    Medplum API
+Compliant    Medplum SDK
+Compliant    Medplum App
+Compliant    Medplum Bots
+Compliant    UI Component Library
+Compliant    GitHub
+
+============================================================
+SUMMARY: 0 violation(s) in 0 component(s) out of 8 total
+============================================================

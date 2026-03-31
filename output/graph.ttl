@@ -1,0 +1,902 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+hipaa:AppointmentBookingSystem_AdminDashboardAPI a hipaa:API ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Admin Dashboard API" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-05 .
+
+hipaa:AppointmentBookingSystem_AnalyticsProcessor a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Analytics Processor" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-12 .
+
+hipaa:AppointmentBookingSystem_AppointmentDB a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Appointment DB" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-07 .
+
+hipaa:AppointmentBookingSystem_AuditLogStorage a hipaa:Storage ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Audit Log Storage" ;
+    hipaa:component_Type "Storage" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+hipaa:AppointmentBookingSystem_AuthService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Auth Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-06 .
+
+hipaa:AppointmentBookingSystem_BookingAPI a hipaa:API ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Booking API" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-03,
+        hipaa:AppointmentBookingSystem_AB-04,
+        hipaa:AppointmentBookingSystem_AB-10 .
+
+hipaa:AppointmentBookingSystem_ExternalBITool a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "External BI Tool" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" .
+
+hipaa:AppointmentBookingSystem_ExternalEmailService a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "External Email Service" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "Yes" .
+
+hipaa:AppointmentBookingSystem_ReminderService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Reminder Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-11 .
+
+hipaa:AppointmentBookingSystem_SchedulingEngine a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Scheduling Engine" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-05 .
+
+hipaa:AppointmentBookingSystem_UserDB a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "User DB" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" .
+
+hipaa:AppointmentBookingSystem_WebBookingPortal a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:AppointmentBookingSystem ;
+    hipaa:component_Name "Web Booking Portal" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:AppointmentBookingSystem_AB-02 .
+
+hipaa:HAPI_AuditLogging a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Audit Logging" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-05 .
+
+hipaa:HAPI_AuthN\(Identity\) a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "AuthN (Identity)" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-01 .
+
+hipaa:HAPI_AuthZ\(Access\) a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "AuthZ (Access)" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-02 .
+
+hipaa:HAPI_BatchScheduler a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Batch Scheduler" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-04 .
+
+hipaa:HAPI_BinaryStorage a hipaa:Storage ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Binary Storage" ;
+    hipaa:component_Type "Storage" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-04 .
+
+hipaa:HAPI_CachingLayer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Caching Layer" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-04 .
+
+hipaa:HAPI_ConfigManagement a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Config Management" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_All .
+
+hipaa:HAPI_ExternalIntegrations a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "External Integrations" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-01 .
+
+hipaa:HAPI_FHIRValidation a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "FHIR Validation" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-02 .
+
+hipaa:HAPI_JPAPersistenceLayer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "JPA Persistence Layer" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-05 .
+
+<http://hipaa-checker.org/ontology#HAPI_Logging/Metrics> a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Logging/Metrics" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_Admin .
+
+hipaa:HAPI_RESTAPILayer a hipaa:API ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "REST API Layer" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-02 .
+
+hipaa:HAPI_RelationalDatabase a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Relational Database" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-04 .
+
+hipaa:HAPI_ResourceControllers a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Resource Controllers" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-04 .
+
+hipaa:HAPI_SearchEngine a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Search Engine" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-05 .
+
+hipaa:HAPI_ServerFramework a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Server Framework" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-04 .
+
+hipaa:HAPI_SwaggerUI a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Swagger UI" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-01 .
+
+hipaa:HAPI_TerminologyService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:HAPI ;
+    hipaa:component_Name "Terminology Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:HAPI_HF-07 .
+
+hipaa:LabResultsPortal_APIGateway a hipaa:API ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "API Gateway" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-03,
+        hipaa:LabResultsPortal_LR-04,
+        hipaa:LabResultsPortal_LR-08 .
+
+hipaa:LabResultsPortal_AuthService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Auth Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-06 .
+
+hipaa:LabResultsPortal_ExternalCloudStorage a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "External Cloud Storage" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "Yes" .
+
+hipaa:LabResultsPortal_ExternalSMSProvider a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "External SMS Provider" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" .
+
+hipaa:LabResultsPortal_IdentityStorage a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Identity Storage" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" .
+
+hipaa:LabResultsPortal_InternalFileStorage a hipaa:Storage ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Internal File Storage" ;
+    hipaa:component_Type "Storage" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-01 .
+
+hipaa:LabResultsPortal_LabResultsDB a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Lab Results DB" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-03,
+        hipaa:LabResultsPortal_LR-07 .
+
+hipaa:LabResultsPortal_LabResultsService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Lab Results Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-05,
+        hipaa:LabResultsPortal_LR-09 .
+
+hipaa:LabResultsPortal_NotificationService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Notification Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-11 .
+
+hipaa:LabResultsPortal_PatientPortalWeb a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Patient Portal Web" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-02 .
+
+hipaa:LabResultsPortal_ReportGenerator a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:LabResultsPortal ;
+    hipaa:component_Name "Report Generator" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:LabResultsPortal_LR-08,
+        hipaa:LabResultsPortal_LR-10 .
+
+hipaa:Medplum_AWSLambdaBotLayer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "AWS Lambda Bot Layer" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-05 .
+
+hipaa:Medplum_BackendAPIServer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "Backend API Server" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-03,
+        hipaa:Medplum_MED-06 .
+
+hipaa:Medplum_ClinicalDataRepository\(CDR\) a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "Clinical Data Repository (CDR)" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-03,
+        hipaa:Medplum_MED-06 .
+
+hipaa:Medplum_FHIRRouter a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "FHIR Router" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-01 .
+
+hipaa:Medplum_GraphiQLInterface a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "GraphiQL Interface" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-02 .
+
+hipaa:Medplum_HL7IntegrationService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "HL7 Integration Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-02 .
+
+hipaa:Medplum_MedplumApp a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "Medplum App" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-02 .
+
+hipaa:Medplum_MedplumAuthServer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "Medplum Auth Server" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-02 .
+
+hipaa:Medplum_MedplumBots a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "Medplum Bots" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-02 .
+
+hipaa:Medplum_MedplumFHIRAPI a hipaa:API ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "Medplum FHIR API" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-01,
+        hipaa:Medplum_MED-05 .
+
+hipaa:Medplum_On-PremiseAgent a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "On-Premise Agent" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:Medplum_MED-02 .
+
+hipaa:Medplum_PostgreSQLDatabase a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "PostgreSQL Database" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" .
+
+hipaa:Medplum_RedisCache a hipaa:Storage ;
+    hipaa:belongs_To_System hipaa:Medplum ;
+    hipaa:component_Name "Redis Cache" ;
+    hipaa:component_Type "Storage" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" .
+
+hipaa:MicrosoftFHIR_AzureActiveDirectory a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Azure Active Directory" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-03,
+        hipaa:MicrosoftFHIR_MSFT-04 .
+
+hipaa:MicrosoftFHIR_AzureBlobStorage a hipaa:Storage ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Azure Blob Storage" ;
+    hipaa:component_Type "Storage" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-01 .
+
+hipaa:MicrosoftFHIR_AzureCosmosDB a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Azure Cosmos DB" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-09 .
+
+hipaa:MicrosoftFHIR_BulkExportModule a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Bulk Export Module" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-13 .
+
+hipaa:MicrosoftFHIR_ClientApplication a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Client Application" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-02,
+        hipaa:MicrosoftFHIR_MSFT-03 .
+
+hipaa:MicrosoftFHIR_ConvertDataService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Convert Data Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-06 .
+
+hipaa:MicrosoftFHIR_CoreLogicLayer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Core Logic Layer" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-07,
+        hipaa:MicrosoftFHIR_MSFT-09 .
+
+hipaa:MicrosoftFHIR_DICOMServer a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "DICOM Server" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-14 .
+
+hipaa:MicrosoftFHIR_FHIRProxy a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "FHIR Proxy" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-04 .
+
+hipaa:MicrosoftFHIR_HealthcareWorkspace a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Healthcare Workspace" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-04,
+        hipaa:MicrosoftFHIR_MSFT-12 .
+
+hipaa:MicrosoftFHIR_HostingLayer\(IoC\) a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Hosting Layer (IoC)" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-04,
+        hipaa:MicrosoftFHIR_MSFT-06 .
+
+hipaa:MicrosoftFHIR_PersistenceLayer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "Persistence Layer" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-10,
+        hipaa:MicrosoftFHIR_MSFT-11 .
+
+hipaa:MicrosoftFHIR_RESTfulAPILayer a hipaa:API ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "RESTful API Layer" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-06 .
+
+hipaa:MicrosoftFHIR_SMARTonFHIRProxy a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "SMART on FHIR Proxy" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-04 .
+
+hipaa:MicrosoftFHIR_SQLServer a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:MicrosoftFHIR ;
+    hipaa:component_Name "SQL Server" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To hipaa:MicrosoftFHIR_MSFT-09 .
+
+hipaa:TelemedicinePlatform_APIGateway a hipaa:API ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "API Gateway" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-03,
+        hipaa:TelemedicinePlatform_TP-04,
+        hipaa:TelemedicinePlatform_TP-10 .
+
+hipaa:TelemedicinePlatform_AuthService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Auth Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-05 .
+
+hipaa:TelemedicinePlatform_ConsultationService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Consultation Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-05,
+        hipaa:TelemedicinePlatform_TP-06,
+        hipaa:TelemedicinePlatform_TP-08 .
+
+hipaa:TelemedicinePlatform_ExternalAnalyticsSaaS a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "External Analytics SaaS" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "Yes" .
+
+hipaa:TelemedicinePlatform_ExternalSMSGateway a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "External SMS Gateway" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "Yes" .
+
+hipaa:TelemedicinePlatform_ExternalVideoCDN a hipaa:ExternalService ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "External Video CDN" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "Yes" .
+
+hipaa:TelemedicinePlatform_InternalAnalytics a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Internal Analytics" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-11 .
+
+hipaa:TelemedicinePlatform_NotificationService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Notification Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-12 .
+
+hipaa:TelemedicinePlatform_PatientMobileApp a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Patient Mobile App" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-02 .
+
+hipaa:TelemedicinePlatform_PatientRecordsDB a hipaa:Database ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Patient Records DB" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-04,
+        hipaa:TelemedicinePlatform_TP-07 .
+
+hipaa:TelemedicinePlatform_PrescriptionService a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Prescription Service" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-05 .
+
+hipaa:TelemedicinePlatform_VideoStreamingServer a hipaa:Service ;
+    hipaa:belongs_To_System hipaa:TelemedicinePlatform ;
+    hipaa:component_Name "Video Streaming Server" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "No" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To hipaa:TelemedicinePlatform_TP-09 .
+

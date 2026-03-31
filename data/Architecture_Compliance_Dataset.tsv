@@ -3,7 +3,7 @@ Telemedicine Platform	TP-01	Patient Mobile App	Service	TP-02	Yes	No	N/A	Yes	Yes	
 Telemedicine Platform	TP-02	API Gateway	API	TP-03,TP-04,TP-10	Yes	No	N/A	Yes	Yes	Routes patient requests and consultation data (contains PHI)	No	Completed
 Telemedicine Platform	TP-03	Auth Service	Service	TP-05	No	No	N/A	N/A	N/A	Handles authentication tokens only (no PHI stored)	No	Completed
 Telemedicine Platform	TP-04	Consultation Service	Service	TP-05,TP-06,TP-08	Yes	No	N/A	Yes	Yes	Processes consultation notes and patient interaction data (contains PHI)	No	Completed
-Telemedicine Platform	TP-05	Patient Records DB	Database	TP-04,TP-07	Yes	No	N/A	Yes	No	Stores patient medical history and prescriptions (contains PHI)	No	Completed
+Telemedicine Platform	TP-05	Patient Records DB	Database	TP-04,TP-07	Yes	No	N/A	Yes	No	Stores patient medical history and prescriptions (contains PHI)	Yes	Completed
 Telemedicine Platform	TP-06	Video Streaming Server	Service	TP-09	Yes	No	N/A	No	Yes	Streams live consultation video containing PHI to external provider	Yes	Completed
 Telemedicine Platform	TP-07	Internal Analytics	Service	TP-11	Yes	No	N/A	Yes	Yes	Processes identifiable consultation analytics and sends PHI to external analytics system	Yes	Completed
 Telemedicine Platform	TP-08	Prescription Service	Service	TP-05	Yes	No	N/A	Yes	Yes	Generates and stores prescriptions (contains PHI)	No	Completed
@@ -15,7 +15,7 @@ Appointment Booking System	AB-01	Web Booking Portal	Service	AB-02	Yes	No	N/A	Yes
 Appointment Booking System	AB-02	Booking API	API	AB-03,AB-04,AB-10	Yes	No	N/A	Yes	Yes	Processes booking requests and patient data (contains PHI)	No	Completed
 Appointment Booking System	AB-03	Scheduling Engine	Service	AB-05	Yes	No	N/A	Yes	Yes	Matches doctors with patient appointments (contains PHI)	No	Completed
 Appointment Booking System	AB-04	Auth Service	Service	AB-06	No	No	N/A	N/A	N/A	Handles login and session management (no PHI stored)	No	Completed
-Appointment Booking System	AB-05	Appointment DB	Database	AB-07	Yes	No	N/A	Yes	No	Stores appointment records and patient identifiers (contains PHI)	No	Completed
+Appointment Booking System	AB-05	Appointment DB	Database	AB-07	Yes	No	N/A	Yes	No	Stores appointment records and patient identifiers (contains PHI)	Yes	Completed
 Appointment Booking System	AB-06	User DB	Database		Yes	No	N/A	Yes	Yes	Stores patient identity profiles (contains PHI)	No	Completed
 Appointment Booking System	AB-07	Reminder Service	Service	AB-11	Yes	No	N/A	No	No	Sends appointment reminders containing PHI to external email provider	Yes	Completed
 Appointment Booking System	AB-08	Admin Dashboard API	API	AB-05	Yes	No	N/A	Yes	Yes	Allows staff to manage bookings and patient data (contains PHI)	No	Completed
@@ -27,7 +27,7 @@ Lab Results Portal	LR-01	Patient Portal Web	Service	LR-02	Yes	No	N/A	Yes	Yes	All
 Lab Results Portal	LR-02	API Gateway	API	LR-03,LR-04,LR-08	Yes	No	N/A	Yes	Yes	Routes lab result and patient requests (contains PHI)	No	Completed
 Lab Results Portal	LR-03	Lab Results Service	Service	LR-05,LR-09	Yes	No	N/A	No	Yes	Processes diagnostic results and sends identifiable PHI to external analytics	Yes	Completed
 Lab Results Portal	LR-04	Auth Service	Service	LR-06	No	No	N/A	N/A	N/A	Handles authentication tokens only (no PHI stored)	No	Completed
-Lab Results Portal	LR-05	Lab Results DB	Database	LR-03,LR-07	Yes	No	N/A	Yes	No	Stores diagnostic reports and patient identifiers (contains PHI)	No	Completed
+Lab Results Portal	LR-05	Lab Results DB	Database	LR-03,LR-07	Yes	No	N/A	Yes	No	Stores diagnostic reports and patient identifiers (contains PHI)	Yes	Completed
 Lab Results Portal	LR-06	Identity Storage	Database		Yes	No	N/A	Yes	Yes	Stores patient identity information (contains PHI)	No	Completed
 Lab Results Portal	LR-07	Report Generator	Service	LR-08,LR-10	Yes	No	N/A	No	Yes	Generates lab reports and sends PHI copies to external cloud storage	Yes	Completed
 Lab Results Portal	LR-08	Internal File Storage	Storage	LR-01	Yes	No	N/A	Yes	Yes	Stores generated lab reports internally (contains PHI)	No	Completed
@@ -79,4 +79,8 @@ HAPI	HF-14	Audit Logging	Compliance	HF-05	Yes	No	N/A	Yes	Yes	Generates FHIR Audi
 HAPI	HF-15	Caching Layer	Performance	HF-04	Yes	Yes	Yes	Yes	Yes	Managed Redis; must be encrypted.	No	Completed
 HAPI	HF-16	Batch Scheduler	Background	HF-04	Yes	No	N/A	Yes	Yes	Bulk Export/Import processing.	No	Completed
 HAPI	HF-17	Config Management	Ops	All	No	No	N/A	N/A	N/A	Env variables; No PHI.	No	Completed
-HAPI	HF-18	Swagger UI	Dev UX	HF-01	No	No	N/A	N/A	N/A	API Documentation only.	No	Completed						
+HAPI	HF-18	Swagger UI	Dev UX	HF-01	No	No	N/A	N/A	N/A	API Documentation only.	No	Completed
+												
+100% Audit-Ready												
+												
+					Minor, check when with graph if necessary then edit this (verify by Reza)	MED-03 (PostgreSQL) and MED-06 (Redis) are marked as Is_External = No. Eta implies kore self-hosting on bare-metal servers. If we actually do hosting them on AWS (like RDS or ElastiCache), they would technically need to be Is_External = Yes with a Has_BAC = Yes just like we did for the HAPI DBss						

@@ -1,0 +1,64 @@
+[
+  {
+    "component_name": "FHIR Server for Azure",
+    "system_name": "Microsoft FHIR \u2014 fhir-server",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "A .NET Core implementation of the FHIR standard for Azure.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Azure Cosmos DB",
+    "system_name": "Microsoft FHIR \u2014 fhir-server",
+    "component_id": "",
+    "component_type": "Database",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "A globally replicated database service used for data persistence.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Azure AAD",
+    "system_name": "Microsoft FHIR \u2014 fhir-server",
+    "component_id": "",
+    "component_type": "External",
+    "handles_phi": "Unknown",
+    "is_external": "Yes",
+    "has_bac_contract": "Yes",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "Used for role-based access control and authentication.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "RESTful API Layer",
+    "system_name": "Microsoft FHIR \u2014 fhir-server",
+    "component_id": "",
+    "component_type": "API",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "Azure Cosmos DB"
+    ],
+    "notes": "The implementation of the APIs defined by the HL7 FHIR specification.",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  }
+]

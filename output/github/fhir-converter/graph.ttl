@@ -1,0 +1,32 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—FHIR-Converter_AzureTenant> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—FHIR-Converter> ;
+    hipaa:component_Name "Azure Tenant" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—FHIR-Converter_FHIRConverterAPI> a hipaa:API ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—FHIR-Converter> ;
+    hipaa:component_Name "FHIR Converter API" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—FHIR-Converter_MicrosoftContainerRegistry> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—FHIR-Converter> ;
+    hipaa:component_Name "Microsoft Container Registry" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+

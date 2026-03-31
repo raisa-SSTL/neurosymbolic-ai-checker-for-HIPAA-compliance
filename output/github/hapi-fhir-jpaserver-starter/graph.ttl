@@ -1,0 +1,52 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter_ApacheMaven> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter> ;
+    hipaa:component_Name "Apache Maven" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter_Docker> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter> ;
+    hipaa:component_Name "Docker" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter_DockerHub> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter> ;
+    hipaa:component_Name "Docker Hub" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter_HAPIFHIRJPAServer> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter> ;
+    hipaa:component_Name "HAPI FHIR JPA Server" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter_OracleJava> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#HAPIFHIR—hapi-fhir-jpaserver-starter> ;
+    hipaa:component_Name "Oracle Java" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+

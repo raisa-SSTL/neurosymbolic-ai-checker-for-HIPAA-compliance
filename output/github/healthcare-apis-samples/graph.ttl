@@ -1,0 +1,52 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples_AzureAPIforFHIR> a hipaa:API ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples> ;
+    hipaa:component_Name "Azure API for FHIR" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "Unknown" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples_AzureHealthDataandAISamplesRepo> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples> ;
+    hipaa:component_Name "Azure Health Data and AI Samples Repo" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "Unknown" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples_HealthcareAPIs> a hipaa:API ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples> ;
+    hipaa:component_Name "Healthcare APIs" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples_JMeter> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples> ;
+    hipaa:component_Name "JMeter" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples_RestClientinVisualStudioCode> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-apis-samples> ;
+    hipaa:component_Name "Rest Client in Visual Studio Code" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+

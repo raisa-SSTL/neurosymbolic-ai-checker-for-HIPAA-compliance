@@ -1,0 +1,69 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_AzureFunction> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples> ;
+    hipaa:component_Name "Azure Function" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_FHIRServerforAzure> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_Synthea> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples> ;
+    hipaa:component_Name "Synthea" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_AzureStorage> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_AzureAPIforFHIR> a hipaa:API ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples> ;
+    hipaa:component_Name "Azure API for FHIR" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_Databricks>,
+        <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_FHIRServerforAzure> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_Databricks> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples> ;
+    hipaa:component_Name "Databricks" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_AzureStorage> a hipaa:Storage ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples> ;
+    hipaa:component_Name "Azure Storage" ;
+    hipaa:component_Type "Storage" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_FHIRServerforAzure> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_FHIRServerforAzure> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples> ;
+    hipaa:component_Name "FHIR Server for Azure" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_AzureAPIforFHIR>,
+        <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server-samples_AzureStorage> .
+

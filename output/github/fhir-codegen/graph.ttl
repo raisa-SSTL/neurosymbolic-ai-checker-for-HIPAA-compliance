@@ -1,0 +1,73 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_FHIRServers> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen> ;
+    hipaa:component_Name "FHIR Servers" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_Microsoft.Health.Fhir.CodeGen> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_GitHub> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen> ;
+    hipaa:component_Name "GitHub" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_Microsoft.Health.Fhir.CodeGenCommon> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen> ;
+    hipaa:component_Name "Microsoft.Health.Fhir.CodeGenCommon" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_Microsoft.Health.Fhir.CrossVersion> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen> ;
+    hipaa:component_Name "Microsoft.Health.Fhir.CrossVersion" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_Microsoft.Health.Fhir.MappingLanguage> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen> ;
+    hipaa:component_Name "Microsoft.Health.Fhir.MappingLanguage" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_fhir-codegencommand-lineapplication> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen> ;
+    hipaa:component_Name "fhir-codegen command-line application" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen_Microsoft.Health.Fhir.CodeGen> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-codegen> ;
+    hipaa:component_Name "Microsoft.Health.Fhir.CodeGen" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+

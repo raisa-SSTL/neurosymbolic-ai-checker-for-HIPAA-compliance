@@ -1,0 +1,55 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-js_Browser> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-js> ;
+    hipaa:component_Name "Browser" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#FHIRTools—client-js_FhirclientLibrary> .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-js_NodeJS> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-js> ;
+    hipaa:component_Name "NodeJS" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#FHIRTools—client-js_FhirclientLibrary> .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-js_npm> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-js> ;
+    hipaa:component_Name "npm" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-js_FHIRServer> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-js> ;
+    hipaa:component_Name "FHIR Server" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-js_FhirclientLibrary> a hipaa:API ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-js> ;
+    hipaa:component_Name "Fhirclient Library" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#FHIRTools—client-js_FHIRServer> .
+

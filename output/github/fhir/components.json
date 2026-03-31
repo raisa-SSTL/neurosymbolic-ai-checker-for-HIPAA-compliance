@@ -1,0 +1,49 @@
+[
+  {
+    "component_name": "FhirProto",
+    "system_name": "FHIR Tools \u2014 fhir",
+    "component_id": "",
+    "component_type": "Database",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "Google\u2019s implementation of the FHIR Standard for Health Care data using Protocol Buffers",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Synthea",
+    "system_name": "FHIR Tools \u2014 fhir",
+    "component_id": "",
+    "component_type": "External",
+    "handles_phi": "Yes",
+    "is_external": "Yes",
+    "has_bac_contract": "No",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "FhirProto"
+    ],
+    "notes": "A synthetic data generation tool used to create FHIR JSON datasets",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "GitHub",
+    "system_name": "FHIR Tools \u2014 fhir",
+    "component_id": "",
+    "component_type": "External",
+    "handles_phi": "Unknown",
+    "is_external": "Yes",
+    "has_bac_contract": "No",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "A web-based platform for version control and collaboration",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  }
+]

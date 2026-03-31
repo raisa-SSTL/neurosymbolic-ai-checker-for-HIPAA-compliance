@@ -1,0 +1,44 @@
+{
+  "generated": "2026-03-31T22:57:07.011602",
+  "total": 5,
+  "violations": 6,
+  "components_flagged": 3,
+  "flags": [
+    {
+      "component": "FHIR Server",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance."
+    },
+    {
+      "component": "Browser",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance."
+    },
+    {
+      "component": "NodeJS",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance."
+    },
+    {
+      "component": "FHIR Server",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance."
+    },
+    {
+      "component": "Browser",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance."
+    },
+    {
+      "component": "NodeJS",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance."
+    }
+  ]
+}

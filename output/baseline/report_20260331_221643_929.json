@@ -1,0 +1,206 @@
+{
+  "generated": "2026-03-31T22:16:43.929717",
+  "total": 85,
+  "violations": 33,
+  "components_flagged": 15,
+  "flags": [
+    {
+      "component": "External Video CDN",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without Business Associate Contract",
+      "explanation": "The External Video CDN handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Video CDN",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The External Video CDN handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "External Video CDN",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The External Video CDN is an external component that handles PHI but does not have a documented agreement in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Video CDN",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "The External Video CDN is an external service that handles PHI but does not have an audit trail in place, making it difficult to track data access."
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without Business Associate Contract",
+      "explanation": "The External Analytics SaaS handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The External Analytics SaaS handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The External Analytics SaaS is an external component that handles PHI but does not have a documented agreement in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "The External Analytics SaaS is an external service that handles PHI but does not have an audit trail in place, making it difficult to track data access."
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without Business Associate Contract",
+      "explanation": "The External SMS Gateway handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data."
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The External SMS Gateway handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The External SMS Gateway is an external component that handles PHI but does not have a documented agreement in place, posing a risk to patient data."
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "The External SMS Gateway is an external service that handles PHI but does not have an audit trail in place, making it difficult to track data access."
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without Business Associate Contract",
+      "explanation": "The External Email Service handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The External Email Service handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The External Email Service is an external component that handles PHI but does not have a documented agreement in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "The External Email Service is an external service that handles PHI but does not have an audit trail in place, making it difficult to track data access."
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without Business Associate Contract",
+      "explanation": "The External Cloud Storage handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The External Cloud Storage handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The External Cloud Storage is an external component that handles PHI but does not have a documented agreement in place, posing a risk to patient data."
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "The External Cloud Storage is an external service that handles PHI but does not have an audit trail in place, making it difficult to track data access."
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without Business Associate Contract",
+      "explanation": "The Client Application handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data."
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The Client Application handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The Client Application is an external component that handles PHI but does not have a documented agreement in place, posing a risk to patient data."
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "The Client Application is an external service that handles PHI but does not have an audit trail in place, making it difficult to track data access."
+    },
+    {
+      "component": "Patient Records DB",
+      "rule_id": "AUD-004",
+      "description": "PHI stored in database without audit logging",
+      "explanation": "The Patient Records DB stores PHI but does not have audit logging in place, making it difficult to track data access."
+    },
+    {
+      "component": "Appointment DB",
+      "rule_id": "AUD-004",
+      "description": "PHI stored in database without audit logging",
+      "explanation": "The Appointment DB stores PHI but does not have audit logging in place, making it difficult to track data access."
+    },
+    {
+      "component": "Lab Results DB",
+      "rule_id": "AUD-004",
+      "description": "PHI stored in database without audit logging",
+      "explanation": "The Lab Results DB stores PHI but does not have audit logging in place, making it difficult to track data access."
+    },
+    {
+      "component": "Video Streaming Server",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The Video Streaming Server handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "Notification Service",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The Notification Service handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "Reminder Service",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The Reminder Service handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "Lab Results Service",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The Lab Results Service handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "Analytics Processor",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The Analytics Processor handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    },
+    {
+      "component": "Report Generator",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "The Report Generator handles PHI but does not have encryption in place, putting patient data at risk of interception."
+    }
+  ]
+}

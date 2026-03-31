@@ -1,0 +1,100 @@
+[
+  {
+    "component_name": "Medplum JS Client Library",
+    "system_name": "Medplum \u2014 medplum-demo-bots",
+    "component_id": "",
+    "component_type": "API",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "Medplum App"
+    ],
+    "notes": "Library used by bots to interact with Medplum services",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Medplum App",
+    "system_name": "Medplum \u2014 medplum-demo-bots",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "Main application where bots are deployed and managed",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Appointment Reminder Bot",
+    "system_name": "Medplum \u2014 medplum-demo-bots",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "Medplum App"
+    ],
+    "notes": "Bot that sends reminders for upcoming appointments",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Medplum Database",
+    "system_name": "Medplum \u2014 medplum-demo-bots",
+    "component_id": "",
+    "component_type": "Database",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "Database that stores bot data and PHI",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "ClientApplication",
+    "system_name": "Medplum \u2014 medplum-demo-bots",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "No",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "Medplum App"
+    ],
+    "notes": "Service that manages client applications and authentication",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "AccessPolicy",
+    "system_name": "Medplum \u2014 medplum-demo-bots",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "No",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "Medplum App"
+    ],
+    "notes": "Service that manages access policies for bots and applications",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  }
+]

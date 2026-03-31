@@ -1,0 +1,41 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-03-31 22:54
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    FHIR Server for Azure
+Compliant    Azure API for FHIR
+Compliant    Azure Storage
+Compliant    Azure Function
+VIOLATION    Databricks
+VIOLATION    Synthea
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : Databricks
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : Synthea
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : Databricks
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : Synthea
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+============================================================
+SUMMARY: 4 violation(s) in 2 component(s) out of 6 total
+============================================================

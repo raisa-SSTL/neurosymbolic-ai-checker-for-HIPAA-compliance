@@ -1,0 +1,52 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components_FHIRServerforAzure> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components> ;
+    hipaa:component_Name "FHIR Server for Azure" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components_GitHub> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components> ;
+    hipaa:component_Name "GitHub" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "No" ;
+    hipaa:has_AuditLog "Yes" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components_IoMTFHIRConnectorforAzure> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components> ;
+    hipaa:component_Name "IoMT FHIR Connector for Azure" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components_MedicalImagingServerforDICOM> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components> ;
+    hipaa:component_Name "Medical Imaging Server for DICOM" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components_MicrosoftHealthCareteam> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—healthcare-shared-components> ;
+    hipaa:component_Name "Microsoft Health Care team" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "Yes" .
+

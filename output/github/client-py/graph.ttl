@@ -1,0 +1,44 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-py_PatientDatabase> a hipaa:Database ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-py> ;
+    hipaa:component_Name "Patient Database" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "No" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#FHIRTools—client-py_FHIRClient> .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-py_SMARTonFHIRserver> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-py> ;
+    hipaa:component_Name "SMART on FHIR server" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "No" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-py_FHIRClient> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-py> ;
+    hipaa:component_Name "FHIRClient" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#FHIRTools—client-py_FHIRServer> .
+
+<http://hipaa-checker.org/ontology#FHIRTools—client-py_FHIRServer> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#FHIRTools—client-py> ;
+    hipaa:component_Name "FHIRServer" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" .
+

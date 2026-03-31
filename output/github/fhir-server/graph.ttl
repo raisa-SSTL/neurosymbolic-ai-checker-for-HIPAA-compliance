@@ -1,0 +1,43 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server_AzureAAD> a hipaa:ExternalService ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server> ;
+    hipaa:component_Name "Azure AAD" ;
+    hipaa:component_Type "External" ;
+    hipaa:handles_PHI "Unknown" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "Yes" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "Yes" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server_FHIRServerforAzure> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server> ;
+    hipaa:component_Name "FHIR Server for Azure" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server_RESTfulAPILayer> a hipaa:API ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server> ;
+    hipaa:component_Name "RESTful API Layer" ;
+    hipaa:component_Type "API" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" ;
+    hipaa:sends_Data_To <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server_AzureCosmosDB> .
+
+<http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server_AzureCosmosDB> a hipaa:Database ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#MicrosoftFHIR—fhir-server> ;
+    hipaa:component_Name "Azure Cosmos DB" ;
+    hipaa:component_Type "Database" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Yes" ;
+    hipaa:is_External "No" .
+

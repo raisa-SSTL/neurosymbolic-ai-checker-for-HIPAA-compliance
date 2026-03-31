@@ -1,0 +1,104 @@
+[
+  {
+    "component_name": "FHIR Server for Azure",
+    "system_name": "Microsoft FHIR \u2014 fhir-server-samples",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Yes",
+    "sends_data_to": [
+      "Azure Storage",
+      "Azure API for FHIR"
+    ],
+    "notes": "A FHIR server for managing healthcare data",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Azure API for FHIR",
+    "system_name": "Microsoft FHIR \u2014 fhir-server-samples",
+    "component_id": "",
+    "component_type": "API",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Yes",
+    "sends_data_to": [
+      "FHIR Server for Azure",
+      "Databricks"
+    ],
+    "notes": "A RESTful API for interacting with FHIR servers",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Azure Storage",
+    "system_name": "Microsoft FHIR \u2014 fhir-server-samples",
+    "component_id": "",
+    "component_type": "Storage",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "No",
+    "sends_data_to": [
+      "FHIR Server for Azure"
+    ],
+    "notes": "A cloud-based storage solution for storing FHIR data",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Azure Function",
+    "system_name": "Microsoft FHIR \u2014 fhir-server-samples",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Yes",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "FHIR Server for Azure"
+    ],
+    "notes": "A serverless compute service for bulk ingesting FHIR data",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Databricks",
+    "system_name": "Microsoft FHIR \u2014 fhir-server-samples",
+    "component_id": "",
+    "component_type": "External",
+    "handles_phi": "Yes",
+    "is_external": "Yes",
+    "has_bac_contract": "No",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "A cloud-based analytics platform for processing FHIR data",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Synthea",
+    "system_name": "Microsoft FHIR \u2014 fhir-server-samples",
+    "component_id": "",
+    "component_type": "External",
+    "handles_phi": "Yes",
+    "is_external": "Yes",
+    "has_bac_contract": "No",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [
+      "Azure Storage"
+    ],
+    "notes": "A synthetic patient data generator",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  }
+]

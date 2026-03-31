@@ -1,0 +1,47 @@
+[
+  {
+    "component_name": "OpenEMR Docker",
+    "system_name": "OpenEMR \u2014 openemr-devops",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "Source repository for the Docker library",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Docker",
+    "system_name": "OpenEMR \u2014 openemr-devops",
+    "component_id": "",
+    "component_type": "External",
+    "handles_phi": "Unknown",
+    "is_external": "Yes",
+    "has_bac_contract": "No",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "Library for Docker images",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  },
+  {
+    "component_name": "Database",
+    "system_name": "OpenEMR \u2014 openemr-devops",
+    "component_id": "",
+    "component_type": "Database",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "No",
+    "sends_data_to": [],
+    "notes": "Used for database connections",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "generated": "2026-03-31T22:56:08.511978",
+  "total": 5,
+  "violations": 2,
+  "components_flagged": 1,
+  "flags": [
+    {
+      "component": "Microsoft Health Care team",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with 45 CFR 164.502(e) and 164.504(e)."
+    },
+    {
+      "component": "Microsoft Health Care team",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with 45 CFR 164.502(e) and 164.504(e)."
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "evaluation_results": [
+    {
+      "label": "Keyword Baseline",
+      "total": 77,
+      "tp": 8,
+      "fp": 9,
+      "fn": 8,
+      "tn": 52,
+      "precision": 0.4706,
+      "recall": 0.5,
+      "f1": 0.4848,
+      "fnr": 0.5,
+      "accuracy": 0.7792,
+      "missed_violations": [
+        "Appointment DB",
+        "Client Application",
+        "Lab Results DB",
+        "Lab Results Service",
+        "Patient Records DB",
+        "Reminder Service",
+        "Report Generator",
+        "Video Streaming Server"
+      ],
+      "false_alarms": [
+        "API Gateway",
+        "Audit Log Storage",
+        "Azure Blob Storage",
+        "Binary Storage",
+        "External BI Tool",
+        "External Integrations",
+        "External SMS Provider",
+        "Identity Storage",
+        "Internal File Storage"
+      ],
+      "flagged_count": 17,
+      "actual_violations": 16
+    },
+    {
+      "label": "Pure LLM Baseline",
+      "total": 77,
+      "tp": 15,
+      "fp": 0,
+      "fn": 1,
+      "tn": 61,
+      "precision": 1.0,
+      "recall": 0.9375,
+      "f1": 0.9677,
+      "fnr": 0.0625,
+      "accuracy": 0.987,
+      "missed_violations": [
+        "Internal Analytics"
+      ],
+      "false_alarms": [],
+      "flagged_count": 15,
+      "actual_violations": 16
+    },
+    {
+      "label": "Neuro-Symbolic",
+      "total": 77,
+      "tp": 9,
+      "fp": 0,
+      "fn": 7,
+      "tn": 61,
+      "precision": 1.0,
+      "recall": 0.5625,
+      "f1": 0.72,
+      "fnr": 0.4375,
+      "accuracy": 0.9091,
+      "missed_violations": [
+        "Analytics Processor",
+        "Internal Analytics",
+        "Lab Results Service",
+        "Notification Service",
+        "Reminder Service",
+        "Report Generator",
+        "Video Streaming Server"
+      ],
+      "false_alarms": [],
+      "flagged_count": 9,
+      "actual_violations": 16
+    }
+  ],
+  "summary": {
+    "Keyword Baseline": {
+      "precision": 0.4706,
+      "recall": 0.5,
+      "f1": 0.4848,
+      "fnr": 0.5
+    },
+    "Pure LLM Baseline": {
+      "precision": 1.0,
+      "recall": 0.9375,
+      "f1": 0.9677,
+      "fnr": 0.0625
+    },
+    "Neuro-Symbolic": {
+      "precision": 1.0,
+      "recall": 0.5625,
+      "f1": 0.72,
+      "fnr": 0.4375
+    }
+  }
+}

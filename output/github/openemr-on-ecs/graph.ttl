@@ -1,0 +1,12 @@
+@prefix hipaa: <http://hipaa-checker.org/ontology#> .
+
+<http://hipaa-checker.org/ontology#OpenEMR—openemr-on-ecs_OpenEMR> a hipaa:Service ;
+    hipaa:belongs_To_System <http://hipaa-checker.org/ontology#OpenEMR—openemr-on-ecs> ;
+    hipaa:component_Name "OpenEMR" ;
+    hipaa:component_Type "Service" ;
+    hipaa:handles_PHI "Yes" ;
+    hipaa:has_AuditLog "Unknown" ;
+    hipaa:has_BAC_Contract "N/A" ;
+    hipaa:has_Encryption "Unknown" ;
+    hipaa:is_External "No" .
+

@@ -1,0 +1,28 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-03-31 22:58
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    FhirProto
+VIOLATION    Synthea
+Compliant    GitHub
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : Synthea
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with HIPAA regulations.
+
+Component : Synthea
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with HIPAA regulations.
+
+============================================================
+SUMMARY: 2 violation(s) in 1 component(s) out of 3 total
+============================================================

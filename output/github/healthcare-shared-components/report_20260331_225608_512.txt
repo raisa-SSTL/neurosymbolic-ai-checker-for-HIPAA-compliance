@@ -1,0 +1,30 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-03-31 22:56
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    FHIR Server for Azure
+Compliant    IoMT FHIR Connector for Azure
+Compliant    Medical Imaging Server for DICOM
+VIOLATION    Microsoft Health Care team
+Compliant    GitHub
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : Microsoft Health Care team
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with 45 CFR 164.502(e) and 164.504(e).
+
+Component : Microsoft Health Care team
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with 45 CFR 164.502(e) and 164.504(e).
+
+============================================================
+SUMMARY: 2 violation(s) in 1 component(s) out of 5 total
+============================================================

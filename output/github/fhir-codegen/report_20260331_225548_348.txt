@@ -1,0 +1,32 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-03-31 22:55
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    Microsoft.Health.Fhir.CodeGenCommon
+Compliant    Microsoft.Health.Fhir.CrossVersion
+Compliant    Microsoft.Health.Fhir.MappingLanguage
+Compliant    Microsoft.Health.Fhir.CodeGen
+VIOLATION    FHIR Servers
+Compliant    GitHub
+Compliant    fhir-codegen command-line application
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : FHIR Servers
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with HIPAA regulations.
+
+Component : FHIR Servers
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance with HIPAA regulations.
+
+============================================================
+SUMMARY: 2 violation(s) in 1 component(s) out of 7 total
+============================================================
