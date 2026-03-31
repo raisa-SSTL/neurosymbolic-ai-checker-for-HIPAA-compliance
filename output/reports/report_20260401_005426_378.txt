@@ -1,0 +1,39 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-04-01 00:54
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    FHIRClient
+Compliant    FHIRServer
+VIOLATION    SMART on FHIR server
+VIOLATION    r4.smarthealthit.org
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : SMART on FHIR server
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance.
+
+Component : r4.smarthealthit.org
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance.
+
+Component : SMART on FHIR server
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance.
+
+Component : r4.smarthealthit.org
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance.
+
+============================================================
+SUMMARY: 4 violation(s) in 2 component(s) out of 4 total
+============================================================

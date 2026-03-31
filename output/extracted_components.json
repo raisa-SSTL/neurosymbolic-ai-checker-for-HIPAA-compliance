@@ -1,0 +1,17 @@
+[
+  {
+    "component_name": "OpenEMR",
+    "system_name": "openemr-on-ecs",
+    "component_id": "",
+    "component_type": "Service",
+    "handles_phi": "Yes",
+    "is_external": "No",
+    "has_bac_contract": "N/A",
+    "has_encryption": "Unknown",
+    "has_audit_log": "Unknown",
+    "sends_data_to": [],
+    "notes": "Electronic health record system",
+    "violation_expected": "No",
+    "extraction_status": "Extracted"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "generated": "2026-04-01T00:34:19.077172",
+  "total": 6,
+  "violations": 1,
+  "components_flagged": 1,
+  "flags": [
+    {
+      "component": "Azure Cosmos DB",
+      "rule_id": "AUD-004",
+      "description": "PHI stored in database without audit logging enabled",
+      "explanation": "The risk is unauthorized access to sensitive patient data, the specific HIPAA safeguard being violated is Audit Controls (164.308(a)(5)(ii)(C)), and if not fixed, the organization could face fines and penalties for non-compliance with HIPAA regulations."
+    }
+  ]
+}

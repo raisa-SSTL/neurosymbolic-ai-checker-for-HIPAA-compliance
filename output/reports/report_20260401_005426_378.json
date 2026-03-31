@@ -1,0 +1,32 @@
+{
+  "generated": "2026-04-01T00:54:26.378319",
+  "total": 4,
+  "violations": 4,
+  "components_flagged": 2,
+  "flags": [
+    {
+      "component": "SMART on FHIR server",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance."
+    },
+    {
+      "component": "r4.smarthealthit.org",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance."
+    },
+    {
+      "component": "SMART on FHIR server",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance."
+    },
+    {
+      "component": "r4.smarthealthit.org",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face significant fines and penalties for non-compliance."
+    }
+  ]
+}

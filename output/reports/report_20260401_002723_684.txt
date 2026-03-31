@@ -1,0 +1,17 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-04-01 00:27
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    Medplum JS Client Library
+Compliant    Medplum App
+Compliant    Appointment Reminder Bot
+Compliant    Medplum Database
+Compliant    ClientApplication
+Compliant    AccessPolicy
+
+============================================================
+SUMMARY: 0 violation(s) in 0 component(s) out of 6 total
+============================================================

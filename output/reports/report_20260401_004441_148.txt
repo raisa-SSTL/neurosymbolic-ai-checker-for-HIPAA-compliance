@@ -1,0 +1,16 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-04-01 00:44
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    FHIR Server for Azure
+Compliant    IoMT FHIR Connector for Azure
+Compliant    Medical Imaging Server for DICOM
+Compliant    Microsoft GitHub
+Compliant    CLA bot
+
+============================================================
+SUMMARY: 0 violation(s) in 0 component(s) out of 5 total
+============================================================

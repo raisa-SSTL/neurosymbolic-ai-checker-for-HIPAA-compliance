@@ -1,0 +1,23 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-04-01 00:32
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    OpenEMR Docker
+Compliant    Docker Hub
+VIOLATION    Database
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : Database
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : The risk is unauthorized access to sensitive patient data, the specific HIPAA safeguard being violated is Audit Controls (164.308(a)(5)(ii)(C)), and if not fixed, the organization could face fines and penalties for non-compliance with HIPAA regulations.
+
+============================================================
+SUMMARY: 1 violation(s) in 1 component(s) out of 3 total
+============================================================

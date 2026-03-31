@@ -1,0 +1,50 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-04-01 00:52
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+VIOLATION    FHIR Server
+Compliant    npm
+Compliant    fhirclient
+VIOLATION    Browser
+VIOLATION    NodeJS
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : FHIR Server
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : Browser
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : NodeJS
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : FHIR Server
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : Browser
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+Component : NodeJS
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The risk is unauthorized disclosure of PHI, the specific HIPAA safeguard being violated is the Business Associate Agreement requirement, and if not fixed, the organization could face fines and penalties for non-compliance.
+
+============================================================
+SUMMARY: 6 violation(s) in 3 component(s) out of 5 total
+============================================================
