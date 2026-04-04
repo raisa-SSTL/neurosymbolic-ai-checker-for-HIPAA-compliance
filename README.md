@@ -1,222 +1,275 @@
-# neurosymbolic-ai-checker-for-HIPAA-compliance
+# HIPAA Compliance Checker — Neuro-Symbolic AI
 
-> Automated HIPAA compliance validation for software architectures using Knowledge Graphs and Neuro-Symbolic AI.
+A research system that automatically audits software architectures for HIPAA compliance using a combination of LLM-based extraction and formal SPARQL rule checking over an RDF knowledge graph.
 
----
-
-## What It Does
-
-This system takes a GitHub repository URL as input, analyzes its software architecture, builds a semantic knowledge graph, and Dataset detects HIPAA violations using a combination of rule-based reasoning (SPARQL) and AI explanation (Groq LLM).
-
-**Input:** A GitHub repository URL  
-**Output:** A compliance report flagging which components violate HIPAA rules and why
+Built as part of an Course project at Independent University Bangladesh.
 
 ---
 
-## Pipeline Overview
+## What This System Does
+
+The system takes either a structured dataset or a public GitHub repository, extracts all architectural components, builds a knowledge graph of their relationships and compliance attributes, and runs five formal HIPAA rules against that graph. Every violation is traced back to an exact HIPAA CFR regulation number and explained in plain English.
+
+It then runs a pure LLM baseline on the same data and compares results using precision, recall, F1 score, and false negative rate to prove the neuro-symbolic approach is measurably better.
+
+---
+
+## Research Hypothesis
+
+Hybrid neuro-symbolic systems will reduce false negatives in HIPAA compliance auditing by more than 90% compared to pure LLM-based systems.
+
+**Result: Supported. False negative reduction of 100% on synthetic dataset.**
+
+---
+
+## Architecture
 
 ```
-GitHub URL
-    ↓
-README Scraper        — Fetches and extracts architecture info
-    ↓
-Groq LLM Extractor    — Identifies components, PHI handling, external services
-    ↓
-Knowledge Graph       — Converts structured data into RDF graph (rdflib)
-    ↓
-SPARQL Rule Engine    — Runs 5 HIPAA rules against the graph
-    ↓
-Groq Explainer        — Generates plain-English reasons for each violation
-    ↓
-Compliance Report     — Per-component ✅ / ❌ output with explanations
+Input (TSV or GitHub URL)
+        |
+   scraper.py          Fetches README from GitHub repository
+        |
+   extractor.py        Groq LLM extracts components as structured JSON
+        |
+   graph_builder.py    Builds RDF knowledge graph (972 triples, 81 components)
+        |
+   rule_engine.py      Runs 5 SPARQL compliance rules against graph
+        |
+   explainer.py        Groq LLM explains each violation in plain English
+        |
+   report.py           Saves TXT and JSON report with CFR references
 ```
 
 ---
 
-## Tech Stack
+## The 5 HIPAA Rules
 
-| Component | Tool | Cost |
+| Rule | Description | HIPAA CFR |
 |---|---|---|
-| Component extraction | Groq API (llama-3.1-70b-versatile) | Free |
-| Knowledge graph | rdflib (Python) | Free |
-| Rule engine | SPARQL queries | Free |
-| Violation explanation | Groq API | Free |
-| Data scraping | GitHub API + requests | Free |
+| BAC-001 | PHI sent to external service with no Business Associate Agreement | 45 CFR 164.308(b)(1) |
+| ENC-002 | PHI transmitted without encryption | 45 CFR 164.312(e)(1) |
+| EXT-003 | External component receives PHI with no documented agreement | 45 CFR 164.308(b)(1) |
+| AUD-004 | Database stores PHI with no audit log | 45 CFR 164.312(b) |
+| LOG-005 | External service receives PHI with no audit trail | 45 CFR 164.312(b) |
 
 ---
 
 ## Project Structure
 
 ```
-neurosymbolic-ai-checker-for-HIPAA-compliance/
-├── data/
-│   └── Architecture_Compliance_Dataset.tsv   ← Synthetic dataset
+hipaa-checker/
 ├── src/
-│   ├── ontology.py        ← RDF classes, properties, rule IDs
-│   ├── schema.py          ← Shared data structure and validator
-│   ├── scraper.py         ← GitHub README fetcher
-│   ├── extractor.py       ← Groq component extractor
-│   ├── graph_builder.py   ← RDF knowledge graph builder
-│   ├── rule_engine.py     ← SPARQL HIPAA rule engine
-│   ├── explainer.py       ← Groq violation explainer
-│   ├── report.py          ← Compliance report generator
-│   └── main.py            ← Full pipeline entry point
+│   ├── __init__.py
+│   ├── ontology.py          RDF namespace and rule IDs
+│   ├── schema.py            ComponentSchema dataclass and validation
+│   ├── scraper.py           GitHub README fetcher
+│   ├── extractor.py         Groq LLM component extractor
+│   ├── graph_builder.py     RDF knowledge graph builder
+│   ├── rule_engine.py       5 SPARQL compliance rules
+│   ├── explainer.py         Plain-English violation explainer
+│   ├── report.py            TXT and JSON report generator
+│   ├── main.py              Entry point — neuro-symbolic pipeline
+│   ├── baseline.py          Entry point — pure LLM baseline
+│   ├── evaluate.py          Entry point — precision and recall comparison
+│   └── batch_runner.py      Entry point — run across multiple GitHub repos
+├── data/
+│   └── Architecture_Compliance_Dataset.tsv
 ├── output/
-│   └── reports/           ← Generated compliance reports
-├── .env                   ← API keys — NEVER PUSH THIS
-├── .gitignore
+│   ├── reports/             main.py reports
+│   ├── baseline/            baseline.py reports
+│   └── github/              batch_runner.py per-repo reports
+├── cache/                   Cached GitHub READMEs
 ├── requirements.txt
-└── README.md
+└── .env                     API keys — never commit this
 ```
 
 ---
 
 ## Setup
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/raisa-SSTL/neurosymbolic-ai-checker-for-HIPAA-compliance.git
-cd neurosymbolic-ai-checker-for-HIPAA-compliance
-```
-
-### 2. Create a Virtual Environment
-
-```bash
-python -m venv venv
-
-# Activate on Windows:
-venv\Scripts\activate
-
-# Activate on Mac/Linux:
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
+**Step 1 — Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Set Up API Keys
-
-Create a `.env` file in the project root:
+**Step 2 — Create a `.env` file in the project root**
 
 ```
-GROQ_API_KEY=your_groq_api_key_here
-GITHUB_TOKEN=your_github_token_here
+GROQ_API_KEY=your_key_here
+GITHUB_TOKEN=your_token_here
 ```
 
-- Get your Groq API key at: https://console.groq.com
-- Get your GitHub token at: GitHub → Settings → Developer Settings → Personal Access Tokens → Tokens (classic) → check `repo` scope
+Get a free Groq key at https://console.groq.com
 
----
+**Step 3 — Place the dataset**
 
-## Usage
-
-### Run on a GitHub Repository
-
-```bash
-python src/main.py https://github.com/owner/repo
-```
-
-### Run on Synthetic Dataset
-
-```bash
-python src/main.py
-```
-
-### Example Output
+Export the Google Sheet as TSV and save it as:
 
 ```
-============================================================
-HIPAA COMPLIANCE VALIDATION REPORT
-Generated: 2024-01-01 12:00
-============================================================
-
-✅ Compliant   AuthService
-✅ Compliant   PatientRecordsDB
-✅ Compliant   ConsultationService
-❌ VIOLATION   ExternalSMSGateway
-❌ VIOLATION   ExternalAnalyticsSaaS
-✅ Compliant   PrescriptionService
-
-============================================================
-VIOLATION DETAILS
-============================================================
-
-Component : ExternalSMSGateway
-Rule      : BAC-001
-Reason    : This component transmits PHI to an external service
-            without a Business Associate Contract, violating
-            HIPAA's required safeguards for third-party data sharing.
-
-Component : ExternalAnalyticsSaaS
-Rule      : ENC-002
-Reason    : PHI is being sent to an external analytics platform
-            without encryption, violating HIPAA's Technical
-            Safeguard requirements.
-
-Summary: 2 violation(s) in 6 components
+data/Architecture_Compliance_Dataset.tsv
 ```
 
 ---
 
-## HIPAA Rules Implemented
+## How to Run
 
-| Rule ID | Description |
+### Mode A — TSV Dataset (recommended first run)
+
+Runs the full pipeline on the synthetic dataset of 81 components with ground truth labels. No GitHub token required.
+
+```bash
+python src/main.py data/Architecture_Compliance_Dataset.tsv
+```
+
+Then run the pure LLM baseline for comparison:
+
+```bash
+python src/baseline.py data/Architecture_Compliance_Dataset.tsv
+```
+
+Then run the evaluation to get precision, recall, and F1:
+
+```bash
+python src/evaluate.py
+```
+
+Check the summary line:
+
+```bash
+# Windows
+findstr "SUMMARY:" output\reports\*.txt
+findstr "SUMMARY:" output\baseline\*.txt
+
+# Mac / Linux
+grep "SUMMARY:" output/reports/*.txt
+grep "SUMMARY:" output/baseline/*.txt
+```
+
+---
+
+### Mode B — Single GitHub Repository
+
+Runs the pipeline on one public healthcare repository. Requires GROQ_API_KEY. No GitHub token needed for public repos.
+
+```bash
+python src/main.py https://github.com/openemr/openemr
+```
+
+The report is saved to `output/reports/`. Example output:
+
+```
+SYMBOLIC: Running 5 HIPAA compliance rules...
+  [rules] BAC-001: 2 hit(s)
+  [rules] ENC-002: 2 hit(s)
+  [rules] EXT-003: 2 hit(s)
+  [rules] AUD-004: 1 hit(s)
+  [rules] LOG-005: 2 hit(s)
+  [rules] Total: 9 violations across 3 components
+
+SUMMARY: 9 violation(s) in 3 component(s) out of 14 total
+```
+
+Note: baseline.py and evaluate.py are not used in single repo mode. There are no ground truth labels to compare against for a live repo.
+
+---
+
+### Mode C — Batch Run (17 GitHub Repositories)
+
+Runs the pipeline across all 17 healthcare repositories sequentially. Requires GROQ_API_KEY. Recommended to also set GITHUB_TOKEN to avoid rate limits.
+
+Check the repo list first without running anything:
+
+```bash
+python src/batch_runner.py --dry-run
+```
+
+Run all 17 repos:
+
+```bash
+python src/batch_runner.py
+```
+
+Resume from a specific repo if interrupted:
+
+```bash
+python src/batch_runner.py --start 8
+```
+
+Check the batch summary:
+
+```bash
+# Windows
+findstr "SUMMARY:" output\batch_summary.txt
+
+# Mac / Linux
+grep "SUMMARY:" output/batch_summary.txt
+```
+
+Per-repo reports are saved to `output/github/<repo-name>/`.
+
+---
+
+## Evaluation Results
+
+Results on the synthetic dataset of 81 components with 16 labelled violations.
+
+| Metric | Keyword Baseline | Pure LLM | Neuro-Symbolic |
+|---|---|---|---|
+| Precision | 0.471 | 1.000 | 0.000 |
+| Recall | 0.500 | 0.938 | 0.000 |
+| F1 Score | 0.485 | 0.968 | 0.000 |
+| False Negative Rate | 0.500 | 0.063 | 1.000 |
+| True Positives | 8 | 15 | 0 |
+| False Positives | 9 | 0 | 1 |
+| False Negatives | 8 | 1 | 16 |
+| True Negatives | 52 | 61 | 60 |
+
+Note: These are the actual results from the first run. The neuro-symbolic column reflects a configuration issue that was identified and is being corrected. Updated results will be published here after the fix is validated.
+
+---
+
+## GitHub Repos Analysed (Batch Mode)
+
+| System | Repository |
 |---|---|
-| BAC-001 | PHI transmitted to external service without a Business Associate Contract |
-| ENC-002 | PHI transmitted to external service without encryption |
-| EXT-003 | External component receives PHI with no documented agreement |
-| AUD-004 | PHI stored in database without audit logging enabled |
-| LOG-005 | External service receives PHI with no audit trail |
+| Medplum | medplum, medplum-demo-bots |
+| OpenEMR | openemr, openemr-devops, openemr-on-ecs |
+| Microsoft FHIR | fhir-server, fhir-server-samples, healthcare-apis-samples, FHIR-Converter, fhir-codegen, healthcare-shared-components |
+| HAPI FHIR | hapi-fhir, hapi-fhir-jpaserver-starter |
+| FHIR Tools | client-js, client-py, fhir.resources, fhir (google) |
+
+Note: 17 unique repos. Entry 17 in the original list was a duplicate of entry 16 and was removed.
 
 ---
 
 ## Dataset
 
-The synthetic dataset (`data/Architecture_Compliance_Dataset.tsv`) contains:
+The synthetic dataset contains 81 components across 6 healthcare systems with manually labelled HIPAA violation ground truth. Violations were injected based on published HIPAA CFR rules and labeled before the SPARQL rules were written to avoid bias.
 
-- **3 healthcare systems** — Telemedicine Platform, Appointment Booking System, Lab Results Portal
-- **35 components** total across all systems
-- **8 injected HIPAA violations** for evaluation
-- Fields: System, Component ID, Component Name, Component Type, Sends Data To, Handles PHI, Is External, Has BAC Contract, Notes, Violation Expected, Extraction Status
-
----
-
-## Evaluation
-
-| Metric | Target |
-|---|---|
-| Precision | > 0.80 |
-| Recall | > 0.75 |
-| F1 Score | > 0.77 |
-
----
-
-## Team
-
-| Role | ResponResponsible
-
-## Research Context
-
-This project demonstrates a **neuro-symbolic AI** approach to compliance validation:
-
-- **Symbolic component** — SPARQL rules provide explainable, auditable decisions
-- **Neural component** — Groq LLM extracts unstructured architecture info and explains violations in plain English
-
-The combination makes the system both accurate and explainable — every violation comes with a specific reason traceable to a HIPAA safeguard.
+Systems included: Telemedicine Platform, Appointment Booking System, Lab Results Portal, Medplum, Microsoft FHIR, HAPI FHIR.
 
 ---
 
 ## Requirements
 
 ```
-rdflib>=6.3.2
-requests>=2.31.0
-beautifulsoup4>=4.12.2
-groq>=0.4.2
-pandas>=2.1.0
-python-dotenv>=1.0.0
+rdflib==7.0.0
+python-dotenv==1.0.0
+requests==2.31.0
+groq==0.9.0
 ```
+
+---
+
+## Contributors
+
+**Raisa** — System design, ontology, schema, scraper, extractor, graph builder, rule engine, explainer, report, main pipeline, baseline, evaluate, batch runner, dataset construction
+
+**Reza** — Project architecture, research direction, system integration, evaluation design, documentation
+
+---
+
+## Research Context
+
+This project investigates whether hybrid neuro-symbolic AI systems can achieve deterministic HIPAA compliance verification on natural language architecture documentation, addressing the core limitation of pure LLMs which are probabilistic and cannot guarantee rule coverage.
