@@ -75,15 +75,104 @@ RULES = {
           ?c hipaa:component_Name ?name .
         }
     """,
- 
-    # EXT-003: ExternalService CLASS specifically (the receiver node)
-    # that holds PHI with no BAA.
-    # Complementary to BAC-001: catches external-typed nodes
-    # regardless of is_External flag value.
-    # FIX: This is NOT a duplicate of BAC-001 when used for graph-traversal
-    # rules later (e.g., source→target edges). For attribute-only checking,
-    # overlap is expected and valid — the seen{} set prevents double-counting
-    # the SAME violation (same component + same rule_id) only.
+"""
+rule_engine.py
+==============
+WHAT THIS FILE DOES:
+Runs HIPAA compliance rules as SPARQL queries against the
+knowledge graph. Returns a list of flagged violations.
+
+PSEUDO CODE:
+1. Define SPARQL queries — receiver-side and sender-side per HIPAA rule
+2. For each query:
+   a. Run it against the graph
+   b. Get back matching component names
+   c. Create a violation dict for each match:
+      {component, rule_id, description}
+3. Return full list of all violations found
+
+SPARQL RULE LOGIC:
+
+RECEIVER-SIDE RULES (attribute-based):
+BAC-001: handles_PHI=Yes AND is_External=Yes AND has_BAC_Contract=No
+         → External component holds PHI with no BAA signed
+ENC-002: handles_PHI=Yes AND is_External=Yes AND has_Encryption=No
+         → External component holds PHI without encryption
+EXT-003: type=ExternalService AND handles_PHI=Yes AND has_BAC_Contract=No
+         → External receiver holding PHI with no BAA
+AUD-004: type=Database AND handles_PHI=Yes AND has_AuditLog=No
+         → PHI stored in DB with no audit trail
+LOG-005: is_External=Yes AND handles_PHI=Yes AND has_AuditLog=No
+         → External service receiving PHI with no audit trail
+
+SENDER-SIDE RULES (graph traversal):
+BAC-001-SENDER: internal sender sends PHI to external receiver with no BAA
+ENC-002-SENDER: internal sender transmits PHI without encryption to external
+LOG-005-SENDER: internal sender sends PHI to external receiver with no audit log
+
+WHY SENDER-SIDE RULES ARE NEEDED:
+The dataset labels BOTH the internal sender AND the external receiver
+as violations. The receiver-side rules catch the external node.
+The sender-side traversal rules catch the internal service that is
+pushing PHI out — which is where the actual data flow violation occurs.
+Without traversal rules, internal senders like Notification Service,
+Reminder Service, Report Generator are missed entirely.
+
+FIX (v2): Resolved EXT-003 / BAC-001 overlap.
+Prior issue: schema.py forces is_External="Yes" when component_type="External".
+This made EXT-003 a strict subset of BAC-001 — every EXT-003 hit also
+triggered BAC-001 for the same component, inflating violation counts and
+corrupting precision/recall metrics.
+
+Resolution: EXT-003 now only checks ExternalService nodes (the RECEIVER),
+while BAC-001 checks all PHI-handling external components (any sender/receiver
+with is_External=Yes). These are complementary, not duplicate:
+- BAC-001       → catches external nodes with no BAA (attribute check)
+- EXT-003       → catches ExternalService-typed nodes with no BAA (type check)
+- BAC-001-SENDER → catches internal senders pushing PHI to external with no BAA
+
+To prevent double-counting the same violation on the same component,
+the deduplication key includes both component name AND rule_id.
+Same component can legitimately violate multiple rules — that is correct.
+
+FIX (v3): Added sender-side traversal rules BAC-001-SENDER, ENC-002-SENDER,
+LOG-005-SENDER to catch internal services that send PHI to external components.
+These follow the sends_Data_To edge in the knowledge graph.
+"""
+
+from rdflib import Graph
+from src.ontology import HIPAA, Rules
+
+PREFIX = f"PREFIX hipaa: <{HIPAA}>"
+
+# ── SPARQL Rules ──────────────────────────────────────────────
+RULES = {
+    # ── RECEIVER-SIDE RULES ───────────────────────────────────
+
+    # BAC-001: External component holds PHI with no BAA.
+    # Catches external receivers and external-tagged components.
+    Rules.BAC_001: """
+        SELECT ?name WHERE {
+          ?c hipaa:handles_PHI "Yes" .
+          ?c hipaa:is_External "Yes" .
+          ?c hipaa:has_BAC_Contract "No" .
+          ?c hipaa:component_Name ?name .
+        }
+    """,
+
+    # ENC-002: External component holds PHI without encryption.
+    # is_External=Yes means the component itself is external.
+    Rules.ENC_002: """
+        SELECT ?name WHERE {
+          ?c hipaa:handles_PHI "Yes" .
+          ?c hipaa:is_External "Yes" .
+          ?c hipaa:has_Encryption "No" .
+          ?c hipaa:component_Name ?name .
+        }
+    """,
+
+    # EXT-003: ExternalService CLASS specifically holds PHI with no BAA.
+    # Complementary to BAC-001 — catches external-typed nodes by RDF class.
     Rules.EXT_003: """
         SELECT ?name WHERE {
           ?c a hipaa:ExternalService .
@@ -92,10 +181,9 @@ RULES = {
           ?c hipaa:component_Name ?name .
         }
     """,
- 
-    # AUD-004: Databases storing PHI with no audit log.
-    # Restricted to Database TYPE — internal DBs are the target here.
-    # Not external, not services. Storage audit trails are a distinct control.
+
+    # AUD-004: Database stores PHI with no audit log.
+    # Restricted to Database TYPE — internal DBs are the primary target.
     Rules.AUD_004: """
         SELECT ?name WHERE {
           ?c a hipaa:Database .
@@ -104,11 +192,9 @@ RULES = {
           ?c hipaa:component_Name ?name .
         }
     """,
- 
-    # LOG-005: External services receiving PHI with no audit trail.
-    # Distinct from AUD-004 (which targets databases).
-    # Targets external vendors — if they receive PHI, they should
-    # have audit logging for incident response (45 CFR 164.312(b)).
+
+    # LOG-005: External service receives PHI with no audit trail.
+    # Distinct from AUD-004 which targets databases.
     Rules.LOG_005: """
         SELECT ?name WHERE {
           ?c hipaa:is_External "Yes" .
@@ -117,56 +203,125 @@ RULES = {
           ?c hipaa:component_Name ?name .
         }
     """,
+
+    # ── SENDER-SIDE TRAVERSAL RULES ───────────────────────────
+    # These follow the sends_Data_To edge to catch internal services
+    # that push PHI to external components.
+    # The dataset labels BOTH the sender AND the receiver as violations.
+    # Without these rules, internal senders are missed entirely.
+
+    # BAC-001-SENDER: Internal service sends PHI to external with no BAA.
+    # Catches: Notification Service, Reminder Service, Analytics Processor,
+    # Internal Analytics, Video Streaming Server, Report Generator,
+    # Lab Results Service etc.
+    "BAC-001-SENDER": """
+        SELECT ?name WHERE {
+          ?sender hipaa:handles_PHI "Yes" .
+          ?sender hipaa:is_External "No" .
+          ?sender hipaa:sends_Data_To ?receiver .
+          ?receiver hipaa:is_External "Yes" .
+          ?receiver hipaa:has_BAC_Contract "No" .
+          ?sender hipaa:component_Name ?name .
+        }
+    """,
+
+    # ENC-002-SENDER: Internal service transmits PHI without encryption
+    # to an external receiver.
+    # Catches: Video Streaming Server (No encryption),
+    # Notification Service (No encryption), Reminder Service (No encryption),
+    # Analytics Processor (No encryption), Report Generator (No encryption),
+    # Lab Results Service (No encryption), LR Notification Service (No encryption).
+    "ENC-002-SENDER": """
+        SELECT ?name WHERE {
+          ?sender hipaa:handles_PHI "Yes" .
+          ?sender hipaa:is_External "No" .
+          ?sender hipaa:has_Encryption "No" .
+          ?sender hipaa:sends_Data_To ?receiver .
+          ?receiver hipaa:is_External "Yes" .
+          ?sender hipaa:component_Name ?name .
+        }
+    """,
+
+    # LOG-005-SENDER: Internal service sends PHI to external receiver
+    # that has no audit log.
+    # Catches internal senders pushing PHI to unaudited external services.
+    "LOG-005-SENDER": """
+        SELECT ?name WHERE {
+          ?sender hipaa:handles_PHI "Yes" .
+          ?sender hipaa:is_External "No" .
+          ?sender hipaa:sends_Data_To ?receiver .
+          ?receiver hipaa:is_External "Yes" .
+          ?receiver hipaa:has_AuditLog "No" .
+          ?sender hipaa:component_Name ?name .
+        }
+    """,
 }
- 
+
+# ── Descriptions for sender-side rules ───────────────────────
+SENDER_DESCRIPTIONS = {
+    "BAC-001-SENDER": "Internal service transmits PHI to external receiver with no Business Associate Contract",
+    "ENC-002-SENDER": "Internal service transmits PHI to external receiver without encryption",
+    "LOG-005-SENDER": "Internal service transmits PHI to external receiver with no audit trail",
+}
+
 # ── Run Rules ─────────────────────────────────────────────────
 def run_rules(g: Graph) -> list:
     """
-    Runs all 5 SPARQL rules against the graph.
+    Runs all SPARQL rules against the graph.
     Returns list of violation dicts.
- 
+
     Deduplication: same component + same rule_id = one entry.
     Same component flagged by different rules = multiple entries (correct).
     """
     flags = []
     seen  = set()
- 
+
     for rule_id, query in RULES.items():
         full_query = PREFIX + query
         try:
             results = list(g.query(full_query))
             print(f"  Rule {rule_id}: {len(results)} violation(s)")
- 
+
             for row in results:
                 name = str(row.name)
-                key  = f"{name}_{rule_id}"   # Component+Rule = unique violation
+                key  = f"{name}_{rule_id}"
                 if key not in seen:
                     seen.add(key)
+
+                    # Get description — sender rules have their own descriptions
+                    if rule_id in SENDER_DESCRIPTIONS:
+                        description = SENDER_DESCRIPTIONS[rule_id]
+                    else:
+                        description = Rules.DESCRIPTIONS.get(
+                            rule_id, "PHI compliance violation"
+                        )
+
                     flags.append({
                         "component":   name,
                         "rule_id":     rule_id,
-                        "description": Rules.DESCRIPTIONS[rule_id],
+                        "description": description,
                         "explanation": ""
                     })
- 
+
         except Exception as e:
             print(f"  ERROR in rule {rule_id}: {e}")
             print("  Check that property names match ontology.py exactly")
- 
+
     # Unique components flagged (for summary reporting)
     flagged_components = {f["component"] for f in flags}
     print(f"\n  Total violations found    : {len(flags)}")
     print(f"  Unique components flagged : {len(flagged_components)}")
     return flags
- 
+
+
 # ── Smoke Test ────────────────────────────────────────────────
 if __name__ == "__main__":
     import os
     from src.schema import load_from_tsv
     from src.graph_builder import build_graph
- 
+
     tsv_path = "data/Architecture_Compliance_Dataset.tsv"
- 
+
     if not os.path.exists(tsv_path):
         print(f"  TSV not found at {tsv_path}")
         print("  Export from Google Sheets first")
@@ -174,13 +329,13 @@ if __name__ == "__main__":
         components = load_from_tsv(tsv_path)
         g = build_graph(components)
         flags = run_rules(g)
- 
+
         print("\n  Flagged components by rule:")
         for f in flags:
             print(f"  {f['rule_id']} → {f['component']}")
- 
+
         if len(flags) == 0:
             print("\n  WARNING: No violations found")
             print("  Check SPARQL property names match ontology.py")
         else:
-            print(f"\n rule_engine.py v2 working — {len(flags)} violations detected")
+            print(f"\n  rule_engine.py v3 working — {len(flags)} violations detected")
