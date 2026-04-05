@@ -25,7 +25,7 @@ Appointment Booking System	AB-11	External Email Service	External		Yes	Yes	No	No	
 Appointment Booking System	AB-12	External BI Tool	External		Yes	Yes	Yes	Yes	Yes	External analytics tool receiving identifiable PHI data	No	Completed
 Lab Results Portal	LR-01	Patient Portal Web	Service	LR-02	Yes	No	N/A	Yes	Yes	Allows patients to view lab reports and identity data (contains PHI)	No	Completed
 Lab Results Portal	LR-02	API Gateway	API	LR-03,LR-04,LR-08	Yes	No	N/A	Yes	Yes	Routes lab result and patient requests (contains PHI)	No	Completed
-Lab Results Portal	LR-03	Lab Results Service	Service	LR-05,LR-09	Yes	No	N/A	No	Yes	Processes diagnostic results and sends identifiable PHI to external analytics	Yes	Completed
+Lab Results Portal	LR-03	Lab Results Service	Service	LR-05,LR-09,LR-10	Yes	No	N/A	Yes	Yes	Processes diagnostic results and sends identifiable PHI to external analytics	Yes	Completed
 Lab Results Portal	LR-04	Auth Service	Service	LR-06	No	No	N/A	N/A	N/A	Handles authentication tokens only (no PHI stored)	No	Completed
 Lab Results Portal	LR-05	Lab Results DB	Database	LR-03,LR-07	Yes	No	N/A	Yes	No	Stores diagnostic reports and patient identifiers (contains PHI)	Yes	Completed
 Lab Results Portal	LR-06	Identity Storage	Database		Yes	No	N/A	Yes	Yes	Stores patient identity information (contains PHI)	No	Completed
