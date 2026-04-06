@@ -513,9 +513,11 @@ groq==0.9.0
 
 ## Contributors
 
-**Raisa** — Product Developer, ontology, schema, scraper, extractor, graph builder, rule engine, explainer, report, main pipeline, baseline, evaluate, batch runner, dataset construction
+**Raisa** — Product Developer & Co-Author.
 
-**Reza** — Project architecture, research direction, system integration, evaluation design, documentation and Risk Management 
+**Raima** — Researcher & Co-Author.
+
+**Reza** — Product Planning & Co-Author.
 
 ---
 
