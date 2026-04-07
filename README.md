@@ -479,13 +479,13 @@ Results on the synthetic dataset of 81 components against manually labelled grou
 
 | Metric | Keyword Baseline | Pure LLM | Neuro-Symbolic |
 |---|---|---|---|
-| Precision | TBD | TBD | TBD |
-| Recall | TBD | TBD | TBD |
-| F1 Score | TBD | TBD | TBD |
-| False Negative Rate | TBD | TBD | TBD |
-| Violations Missed | TBD | TBD | TBD |
+| Precision | 0.471 | 1.000 | 1.000 |
+| Recall | 0.500 | 0.875 | 1.000 |
+| F1 Score | 0.485 | 0.933 | 1.000 |
+| False Negative Rate | 0.500 | 0.125 | 0.000 |
+| Accuracy | 0.779 | 0.974 | 1.000 |
 
-Results will be updated after the final evaluation run is completed.
+Evaluation results across three approaches on 85 components with 16 ground truth violations
 
 ---
 
@@ -513,11 +513,11 @@ groq==0.9.0
 
 ## Contributors
 
-**Raisa** — Product Developer & Co-Author.
+**Mahrina Mohsin Raisa** — Product Developer & Co-Author.
 
-**Raima** — Researcher & Co-Author.
+**Raima Haque Prema** — Repository Curator & Co-Author.
 
-**Reza** — Product Planning & Co-Author.
+**Reza** — Product Planner & Co-Author.
 
 ---
 
