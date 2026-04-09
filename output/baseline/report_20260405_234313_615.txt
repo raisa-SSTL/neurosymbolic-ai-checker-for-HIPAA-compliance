@@ -1,0 +1,235 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-04-05 23:43
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    Patient Mobile App
+Compliant    API Gateway
+Compliant    Auth Service
+Compliant    Consultation Service
+VIOLATION    Patient Records DB
+VIOLATION    Video Streaming Server
+Compliant    Internal Analytics
+Compliant    Prescription Service
+VIOLATION    External Video CDN
+VIOLATION    Notification Service
+VIOLATION    External Analytics SaaS
+VIOLATION    External SMS Gateway
+Compliant    Web Booking Portal
+Compliant    Booking API
+Compliant    Scheduling Engine
+Compliant    Auth Service
+VIOLATION    Appointment DB
+Compliant    User DB
+VIOLATION    Reminder Service
+Compliant    Admin Dashboard API
+Compliant    Audit Log Storage
+VIOLATION    Analytics Processor
+VIOLATION    External Email Service
+Compliant    External BI Tool
+Compliant    Patient Portal Web
+Compliant    API Gateway
+Compliant    Lab Results Service
+Compliant    Auth Service
+VIOLATION    Lab Results DB
+Compliant    Identity Storage
+VIOLATION    Report Generator
+Compliant    Internal File Storage
+VIOLATION    Notification Service
+VIOLATION    External Cloud Storage
+Compliant    External SMS Provider
+Compliant    Clinical Data Repository (CDR)
+Compliant    Medplum FHIR API
+Compliant    PostgreSQL Database
+Compliant    Medplum Auth Server
+Compliant    Medplum Bots
+Compliant    Redis Cache
+Compliant    On-Premise Agent
+Compliant    Medplum App
+Compliant    HL7 Integration Service
+Compliant    FHIR Router
+Compliant    AWS Lambda Bot Layer
+Compliant    GraphiQL Interface
+Compliant    Backend API Server
+VIOLATION    Client Application
+Compliant    Azure Active Directory
+Compliant    FHIR Proxy
+Compliant    RESTful API Layer
+Compliant    SMART on FHIR Proxy
+Compliant    Core Logic Layer
+Compliant    Bulk Export Module
+Compliant    Convert Data Service
+Compliant    Persistence Layer
+Compliant    Azure Cosmos DB
+Compliant    SQL Server
+Compliant    DICOM Server
+Compliant    Azure Blob Storage
+Compliant    Healthcare Workspace
+Compliant    Hosting Layer (IoC)
+Compliant    REST API Layer
+Compliant    Resource Controllers
+Compliant    Server Framework
+Compliant    JPA Persistence Layer
+Compliant    Relational Database
+Compliant    Search Engine
+Compliant    FHIR Validation
+Compliant    Terminology Service
+Compliant    AuthN (Identity)
+Compliant    AuthZ (Access)
+Compliant    Binary Storage
+Compliant    External Integrations
+Compliant    Logging/Metrics
+Compliant    Audit Logging
+Compliant    Caching Layer
+Compliant    Batch Scheduler
+Compliant    Config Management
+Compliant    Swagger UI
+Compliant    UnknownComponent_81
+Compliant    UnknownComponent_82
+Compliant    UnknownComponent_83
+Compliant    UnknownComponent_84
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : External Video CDN
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Video CDN handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data.
+
+Component : External Video CDN
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The External Video CDN handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : External Video CDN
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Video CDN is an external component that handles PHI but does not have a documented agreement in place, which is a violation of HIPAA regulations.
+
+Component : External Analytics SaaS
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Analytics SaaS handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data.
+
+Component : External Analytics SaaS
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The External Analytics SaaS handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : External Analytics SaaS
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Analytics SaaS is an external component that handles PHI but does not have a documented agreement in place, which is a violation of HIPAA regulations.
+
+Component : External SMS Gateway
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External SMS Gateway handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data.
+
+Component : External SMS Gateway
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The External SMS Gateway handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : External SMS Gateway
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External SMS Gateway is an external component that handles PHI but does not have a documented agreement in place, which is a violation of HIPAA regulations.
+
+Component : External Email Service
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Email Service handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data.
+
+Component : External Email Service
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The External Email Service handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : External Email Service
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Email Service is an external component that handles PHI but does not have a documented agreement in place, which is a violation of HIPAA regulations.
+
+Component : External Cloud Storage
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Cloud Storage handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data.
+
+Component : External Cloud Storage
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The External Cloud Storage handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : External Cloud Storage
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The External Cloud Storage is an external component that handles PHI but does not have a documented agreement in place, which is a violation of HIPAA regulations.
+
+Component : Client Application
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The Client Application handles PHI but does not have a Business Associate Contract in place, posing a risk to patient data.
+
+Component : Client Application
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The Client Application handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : Client Application
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : The Client Application is an external component that handles PHI but does not have a documented agreement in place, which is a violation of HIPAA regulations.
+
+Component : Patient Records DB
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : The Patient Records DB stores PHI but does not have audit logging in place, making it difficult to track access and modifications to patient data.
+
+Component : Appointment DB
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : The Appointment DB stores PHI but does not have audit logging in place, making it difficult to track access and modifications to patient data.
+
+Component : Lab Results DB
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : The Lab Results DB stores PHI but does not have audit logging in place, making it difficult to track access and modifications to patient data.
+
+Component : Video Streaming Server
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The Video Streaming Server handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : Notification Service
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The Notification Service handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : Reminder Service
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The Reminder Service handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : Analytics Processor
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : The Analytics Processor handles PHI but does not have an audit trail in place, making it difficult to track access and modifications to patient data.
+
+Component : Report Generator
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : The Report Generator handles PHI but does not have encryption in place, putting patient data at risk of interception.
+
+Component : Notification Service
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : The Notification Service handles PHI but does not have an audit trail in place, making it difficult to track access and modifications to patient data.
+
+============================================================
+SUMMARY: 27 violation(s) in 14 component(s) out of 85 total
+============================================================

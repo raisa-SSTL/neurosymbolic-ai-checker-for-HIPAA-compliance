@@ -1,0 +1,320 @@
+============================================================
+HIPAA COMPLIANCE VALIDATION REPORT
+Generated: 2026-04-05 23:38
+============================================================
+
+COMPONENT STATUS
+------------------------------------------------------------
+Compliant    Patient Mobile App
+Compliant    API Gateway
+Compliant    Auth Service
+Compliant    Consultation Service
+VIOLATION    Patient Records DB
+VIOLATION    Video Streaming Server
+VIOLATION    Internal Analytics
+Compliant    Prescription Service
+VIOLATION    External Video CDN
+VIOLATION    Notification Service
+VIOLATION    External Analytics SaaS
+VIOLATION    External SMS Gateway
+Compliant    Web Booking Portal
+Compliant    Booking API
+Compliant    Scheduling Engine
+Compliant    Auth Service
+VIOLATION    Appointment DB
+Compliant    User DB
+VIOLATION    Reminder Service
+Compliant    Admin Dashboard API
+Compliant    Audit Log Storage
+VIOLATION    Analytics Processor
+VIOLATION    External Email Service
+Compliant    External BI Tool
+Compliant    Patient Portal Web
+Compliant    API Gateway
+VIOLATION    Lab Results Service
+Compliant    Auth Service
+VIOLATION    Lab Results DB
+Compliant    Identity Storage
+VIOLATION    Report Generator
+Compliant    Internal File Storage
+VIOLATION    Notification Service
+VIOLATION    External Cloud Storage
+Compliant    External SMS Provider
+Compliant    Clinical Data Repository (CDR)
+Compliant    Medplum FHIR API
+Compliant    PostgreSQL Database
+Compliant    Medplum Auth Server
+Compliant    Medplum Bots
+Compliant    Redis Cache
+Compliant    On-Premise Agent
+Compliant    Medplum App
+Compliant    HL7 Integration Service
+Compliant    FHIR Router
+Compliant    AWS Lambda Bot Layer
+Compliant    GraphiQL Interface
+Compliant    Backend API Server
+VIOLATION    Client Application
+Compliant    Azure Active Directory
+Compliant    FHIR Proxy
+Compliant    RESTful API Layer
+Compliant    SMART on FHIR Proxy
+Compliant    Core Logic Layer
+Compliant    Bulk Export Module
+Compliant    Convert Data Service
+Compliant    Persistence Layer
+Compliant    Azure Cosmos DB
+Compliant    SQL Server
+Compliant    DICOM Server
+Compliant    Azure Blob Storage
+Compliant    Healthcare Workspace
+Compliant    Hosting Layer (IoC)
+Compliant    REST API Layer
+Compliant    Resource Controllers
+Compliant    Server Framework
+Compliant    JPA Persistence Layer
+Compliant    Relational Database
+Compliant    Search Engine
+Compliant    FHIR Validation
+Compliant    Terminology Service
+Compliant    AuthN (Identity)
+Compliant    AuthZ (Access)
+Compliant    Binary Storage
+Compliant    External Integrations
+Compliant    Logging/Metrics
+Compliant    Audit Logging
+Compliant    Caching Layer
+Compliant    Batch Scheduler
+Compliant    Config Management
+Compliant    Swagger UI
+Compliant    UnknownComponent_81
+Compliant    UnknownComponent_82
+Compliant    UnknownComponent_83
+Compliant    UnknownComponent_84
+
+============================================================
+VIOLATION DETAILS
+============================================================
+
+Component : External Video CDN
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : PHI transmitted to external service without a Business Associate Contract
+
+Component : External Analytics SaaS
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : PHI transmitted to external service without a Business Associate Contract
+
+Component : External SMS Gateway
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : PHI transmitted to external service without a Business Associate Contract
+
+Component : External Email Service
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : PHI transmitted to external service without a Business Associate Contract
+
+Component : External Cloud Storage
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : PHI transmitted to external service without a Business Associate Contract
+
+Component : Client Application
+Rule      : BAC-001
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : PHI transmitted to external service without a Business Associate Contract
+
+Component : External Video CDN
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : PHI transmitted to external service without encryption
+
+Component : External Analytics SaaS
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : PHI transmitted to external service without encryption
+
+Component : External SMS Gateway
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : PHI transmitted to external service without encryption
+
+Component : External Email Service
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : PHI transmitted to external service without encryption
+
+Component : External Cloud Storage
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : PHI transmitted to external service without encryption
+
+Component : Client Application
+Rule      : ENC-002
+HIPAA Ref : 45 CFR 164.312(e)(1) — Transmission Security
+Reason    : PHI transmitted to external service without encryption
+
+Component : External Video CDN
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : External component receives PHI with no documented agreement
+
+Component : External Analytics SaaS
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : External component receives PHI with no documented agreement
+
+Component : External SMS Gateway
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : External component receives PHI with no documented agreement
+
+Component : External Email Service
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : External component receives PHI with no documented agreement
+
+Component : External Cloud Storage
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : External component receives PHI with no documented agreement
+
+Component : Client Application
+Rule      : EXT-003
+HIPAA Ref : 45 CFR 164.308(b)(1) — Business Associate Contracts
+Reason    : External component receives PHI with no documented agreement
+
+Component : Patient Records DB
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : PHI stored in database without audit logging enabled
+
+Component : Appointment DB
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : PHI stored in database without audit logging enabled
+
+Component : Lab Results DB
+Rule      : AUD-004
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : PHI stored in database without audit logging enabled
+
+Component : External Video CDN
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : External service receives PHI with no audit trail
+
+Component : External Analytics SaaS
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : External service receives PHI with no audit trail
+
+Component : External SMS Gateway
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : External service receives PHI with no audit trail
+
+Component : External Email Service
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : External service receives PHI with no audit trail
+
+Component : External Cloud Storage
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : External service receives PHI with no audit trail
+
+Component : Client Application
+Rule      : LOG-005
+HIPAA Ref : 45 CFR 164.312(b) — Audit Controls
+Reason    : External service receives PHI with no audit trail
+
+Component : Video Streaming Server
+Rule      : BAC-001-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no Business Associate Contract
+
+Component : Internal Analytics
+Rule      : BAC-001-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no Business Associate Contract
+
+Component : Notification Service
+Rule      : BAC-001-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no Business Associate Contract
+
+Component : Reminder Service
+Rule      : BAC-001-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no Business Associate Contract
+
+Component : Lab Results Service
+Rule      : BAC-001-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no Business Associate Contract
+
+Component : Report Generator
+Rule      : BAC-001-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no Business Associate Contract
+
+Component : Video Streaming Server
+Rule      : ENC-002-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver without encryption
+
+Component : Notification Service
+Rule      : ENC-002-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver without encryption
+
+Component : Reminder Service
+Rule      : ENC-002-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver without encryption
+
+Component : Analytics Processor
+Rule      : ENC-002-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver without encryption
+
+Component : Report Generator
+Rule      : ENC-002-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver without encryption
+
+Component : Video Streaming Server
+Rule      : LOG-005-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no audit trail
+
+Component : Internal Analytics
+Rule      : LOG-005-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no audit trail
+
+Component : Notification Service
+Rule      : LOG-005-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no audit trail
+
+Component : Reminder Service
+Rule      : LOG-005-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no audit trail
+
+Component : Lab Results Service
+Rule      : LOG-005-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no audit trail
+
+Component : Report Generator
+Rule      : LOG-005-SENDER
+HIPAA Ref : See HIPAA Security Rule
+Reason    : Internal service transmits PHI to external receiver with no audit trail
+
+============================================================
+SUMMARY: 44 violation(s) in 16 component(s) out of 85 total
+============================================================

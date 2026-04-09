@@ -39,45 +39,38 @@
     {
       "label": "Pure LLM Baseline",
       "total": 77,
-      "tp": 15,
+      "tp": 14,
       "fp": 0,
-      "fn": 1,
+      "fn": 2,
       "tn": 61,
       "precision": 1.0,
-      "recall": 0.9375,
-      "f1": 0.9677,
-      "fnr": 0.0625,
-      "accuracy": 0.987,
+      "recall": 0.875,
+      "f1": 0.9333,
+      "fnr": 0.125,
+      "accuracy": 0.974,
       "missed_violations": [
-        "Internal Analytics"
+        "Internal Analytics",
+        "Lab Results Service"
       ],
       "false_alarms": [],
-      "flagged_count": 15,
+      "flagged_count": 14,
       "actual_violations": 16
     },
     {
       "label": "Neuro-Symbolic",
       "total": 77,
-      "tp": 9,
+      "tp": 16,
       "fp": 0,
-      "fn": 7,
+      "fn": 0,
       "tn": 61,
       "precision": 1.0,
-      "recall": 0.5625,
-      "f1": 0.72,
-      "fnr": 0.4375,
-      "accuracy": 0.9091,
-      "missed_violations": [
-        "Analytics Processor",
-        "Internal Analytics",
-        "Lab Results Service",
-        "Notification Service",
-        "Reminder Service",
-        "Report Generator",
-        "Video Streaming Server"
-      ],
+      "recall": 1.0,
+      "f1": 1.0,
+      "fnr": 0.0,
+      "accuracy": 1.0,
+      "missed_violations": [],
       "false_alarms": [],
-      "flagged_count": 9,
+      "flagged_count": 16,
       "actual_violations": 16
     }
   ],
@@ -90,15 +83,15 @@
     },
     "Pure LLM Baseline": {
       "precision": 1.0,
-      "recall": 0.9375,
-      "f1": 0.9677,
-      "fnr": 0.0625
+      "recall": 0.875,
+      "f1": 0.9333,
+      "fnr": 0.125
     },
     "Neuro-Symbolic": {
       "precision": 1.0,
-      "recall": 0.5625,
-      "f1": 0.72,
-      "fnr": 0.4375
+      "recall": 1.0,
+      "f1": 1.0,
+      "fnr": 0.0
     }
   }
 }

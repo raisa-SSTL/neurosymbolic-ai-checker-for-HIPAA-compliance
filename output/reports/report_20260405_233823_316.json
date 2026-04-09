@@ -1,0 +1,272 @@
+{
+  "generated": "2026-04-05T23:38:23.316275",
+  "total": 85,
+  "violations": 44,
+  "components_flagged": 16,
+  "flags": [
+    {
+      "component": "External Video CDN",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "PHI transmitted to external service without a Business Associate Contract"
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "PHI transmitted to external service without a Business Associate Contract"
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "PHI transmitted to external service without a Business Associate Contract"
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "PHI transmitted to external service without a Business Associate Contract"
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "PHI transmitted to external service without a Business Associate Contract"
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "BAC-001",
+      "description": "PHI transmitted to external service without a Business Associate Contract",
+      "explanation": "PHI transmitted to external service without a Business Associate Contract"
+    },
+    {
+      "component": "External Video CDN",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "PHI transmitted to external service without encryption"
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "PHI transmitted to external service without encryption"
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "PHI transmitted to external service without encryption"
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "PHI transmitted to external service without encryption"
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "PHI transmitted to external service without encryption"
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "ENC-002",
+      "description": "PHI transmitted to external service without encryption",
+      "explanation": "PHI transmitted to external service without encryption"
+    },
+    {
+      "component": "External Video CDN",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "External component receives PHI with no documented agreement"
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "External component receives PHI with no documented agreement"
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "External component receives PHI with no documented agreement"
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "External component receives PHI with no documented agreement"
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "External component receives PHI with no documented agreement"
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "EXT-003",
+      "description": "External component receives PHI with no documented agreement",
+      "explanation": "External component receives PHI with no documented agreement"
+    },
+    {
+      "component": "Patient Records DB",
+      "rule_id": "AUD-004",
+      "description": "PHI stored in database without audit logging enabled",
+      "explanation": "PHI stored in database without audit logging enabled"
+    },
+    {
+      "component": "Appointment DB",
+      "rule_id": "AUD-004",
+      "description": "PHI stored in database without audit logging enabled",
+      "explanation": "PHI stored in database without audit logging enabled"
+    },
+    {
+      "component": "Lab Results DB",
+      "rule_id": "AUD-004",
+      "description": "PHI stored in database without audit logging enabled",
+      "explanation": "PHI stored in database without audit logging enabled"
+    },
+    {
+      "component": "External Video CDN",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "External service receives PHI with no audit trail"
+    },
+    {
+      "component": "External Analytics SaaS",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "External service receives PHI with no audit trail"
+    },
+    {
+      "component": "External SMS Gateway",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "External service receives PHI with no audit trail"
+    },
+    {
+      "component": "External Email Service",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "External service receives PHI with no audit trail"
+    },
+    {
+      "component": "External Cloud Storage",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "External service receives PHI with no audit trail"
+    },
+    {
+      "component": "Client Application",
+      "rule_id": "LOG-005",
+      "description": "External service receives PHI with no audit trail",
+      "explanation": "External service receives PHI with no audit trail"
+    },
+    {
+      "component": "Video Streaming Server",
+      "rule_id": "BAC-001-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no Business Associate Contract",
+      "explanation": "Internal service transmits PHI to external receiver with no Business Associate Contract"
+    },
+    {
+      "component": "Internal Analytics",
+      "rule_id": "BAC-001-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no Business Associate Contract",
+      "explanation": "Internal service transmits PHI to external receiver with no Business Associate Contract"
+    },
+    {
+      "component": "Notification Service",
+      "rule_id": "BAC-001-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no Business Associate Contract",
+      "explanation": "Internal service transmits PHI to external receiver with no Business Associate Contract"
+    },
+    {
+      "component": "Reminder Service",
+      "rule_id": "BAC-001-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no Business Associate Contract",
+      "explanation": "Internal service transmits PHI to external receiver with no Business Associate Contract"
+    },
+    {
+      "component": "Lab Results Service",
+      "rule_id": "BAC-001-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no Business Associate Contract",
+      "explanation": "Internal service transmits PHI to external receiver with no Business Associate Contract"
+    },
+    {
+      "component": "Report Generator",
+      "rule_id": "BAC-001-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no Business Associate Contract",
+      "explanation": "Internal service transmits PHI to external receiver with no Business Associate Contract"
+    },
+    {
+      "component": "Video Streaming Server",
+      "rule_id": "ENC-002-SENDER",
+      "description": "Internal service transmits PHI to external receiver without encryption",
+      "explanation": "Internal service transmits PHI to external receiver without encryption"
+    },
+    {
+      "component": "Notification Service",
+      "rule_id": "ENC-002-SENDER",
+      "description": "Internal service transmits PHI to external receiver without encryption",
+      "explanation": "Internal service transmits PHI to external receiver without encryption"
+    },
+    {
+      "component": "Reminder Service",
+      "rule_id": "ENC-002-SENDER",
+      "description": "Internal service transmits PHI to external receiver without encryption",
+      "explanation": "Internal service transmits PHI to external receiver without encryption"
+    },
+    {
+      "component": "Analytics Processor",
+      "rule_id": "ENC-002-SENDER",
+      "description": "Internal service transmits PHI to external receiver without encryption",
+      "explanation": "Internal service transmits PHI to external receiver without encryption"
+    },
+    {
+      "component": "Report Generator",
+      "rule_id": "ENC-002-SENDER",
+      "description": "Internal service transmits PHI to external receiver without encryption",
+      "explanation": "Internal service transmits PHI to external receiver without encryption"
+    },
+    {
+      "component": "Video Streaming Server",
+      "rule_id": "LOG-005-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no audit trail",
+      "explanation": "Internal service transmits PHI to external receiver with no audit trail"
+    },
+    {
+      "component": "Internal Analytics",
+      "rule_id": "LOG-005-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no audit trail",
+      "explanation": "Internal service transmits PHI to external receiver with no audit trail"
+    },
+    {
+      "component": "Notification Service",
+      "rule_id": "LOG-005-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no audit trail",
+      "explanation": "Internal service transmits PHI to external receiver with no audit trail"
+    },
+    {
+      "component": "Reminder Service",
+      "rule_id": "LOG-005-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no audit trail",
+      "explanation": "Internal service transmits PHI to external receiver with no audit trail"
+    },
+    {
+      "component": "Lab Results Service",
+      "rule_id": "LOG-005-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no audit trail",
+      "explanation": "Internal service transmits PHI to external receiver with no audit trail"
+    },
+    {
+      "component": "Report Generator",
+      "rule_id": "LOG-005-SENDER",
+      "description": "Internal service transmits PHI to external receiver with no audit trail",
+      "explanation": "Internal service transmits PHI to external receiver with no audit trail"
+    }
+  ]
+}
